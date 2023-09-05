@@ -1,0 +1,23 @@
+<div id="header">
+    <div id="logo">
+        <h1>Xiao-Ou Zhang Lab</h1>
+        <div class="slogan">Making sense of noncoding sequence!</div>
+    </div>
+    <div id="menubar">
+        <ul id="menu">
+            <!-- put class="current" in the li tag for the selected page - to highlight which page you're on -->
+            <li {% if page.url=="/" %} class="current" {% endif %}>
+                <a href="/">Home</a>
+            </li>
+            <li {% if page.url=="/team.html" %} class="current" {% endif %}>
+                <a href="/team">Team</a>
+            </li>
+            <li {% if page.url=="/publications.html" %} class="current" {% endif %}>
+                <a href="/publications">Publications</a>
+            </li>
+            <li {% if page.url=="/softwares.html" %} class="current" {% endif %}>
+                <a href="/softwares">Softwares</a>
+            </li>
+        </ul>
+    </div>
+</div>

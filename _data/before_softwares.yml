@@ -1,0 +1,23 @@
+- name: RAMPAGE analysis toolkit
+  img: /images/softwares/RAMPAGE.jpg
+  website: https://github.com/kepbod/rampage_alu
+  description: RAMPAGE analysis toolkit is a standardized pipeline designed to execute quality control, data cleaning, peak calling, and peak annotations for RAMPAGE data. Using this pipeline, we successful identify Pol III-transcribed Alu elements, alternative TSSs, expressed snRNA variants, and transposon-derived TSSs. <a href="http://www.ncbi.nlm.nih.gov/pubmed/31413151">(Zhang et al., Genome Res, 2019)</a> <a href="http://www.ncbi.nlm.nih.gov/pubmed/34949670">(Moore et al., Genome Res, 2022)</a>
+- name: CIRCpseudo
+  img: /images/softwares/CIRCpseudo.jpg
+  website: https://github.com/YangLab/CIRCpseudo
+  description: CIRCpseudo is a pipeline to map back-splicing junction sequences for circRNA-derived pseudogenes. Using this pipeline, you could identify potental pseudogenes derived from circRNAs. <a href="http://www.ncbi.nlm.nih.gov/pubmed/27021280">(Dong et al., Cell Res, 2016)</a>
+
+- name: CIRCpedia
+  img: /images/softwares/CIRCpedia.jpg
+  website: http://yang-laboratory.com/circpedia/
+  description: CIRCpedia is an integrative database, aiming to annotating alternative back-splicing and alternative splicing in circRNAs across different cell lines. <a href="http://www.ncbi.nlm.nih.gov/pubmed/27365365">(Zhang et al., Genome Res, 2016)</a>
+
+- name: CIRCexplorer/CIRCexplorer2
+  img: /images/softwares/CIRCexplorer.jpg
+  website: https://circexplorer2.readthedocs.io/en/latest/
+  description: CIRCexplorer is a comprehensive and integrative circular RNA analysis toolset. It offers support for multiple circular RNA aligners, enables de novo assembly of novel circular RNA transcripts, and facilitates the characterization of various alternative (back-)splicing events in circular RNAs. <a href="http://www.ncbi.nlm.nih.gov/pubmed/25242744">(Zhang et al., Cell, 2014)</a> <a href="http://www.ncbi.nlm.nih.gov/pubmed/27365365">(Zhang et al., Genome Res, 2016)</a>
+
+- name: CIRCfinder
+  img: /images/softwares/CIRCfinder.jpg
+  website: https://github.com/YangLab/CIRCfinder
+  description: CIRCfinder is a pipeline to map junction reads for circular intronic RNAs (ciRNAs). Using this pipeline, you could determine the exact boundaries of interested ciRNAs. <a href="http://www.ncbi.nlm.nih.gov/pubmed/24035497">(Zhang et al., Mol Cell, 2013)</a>

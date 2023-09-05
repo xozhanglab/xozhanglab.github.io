@@ -1,0 +1,35 @@
+---
+layout: default
+---
+
+<div id="content">
+    <div id="software">
+        <ul id="filterlist">
+
+            <h2>Please see the Xiao-Ou Zhang Lab's <a href="https://github.com/xozhanglab" target="_blank">GitHub
+                    page</a> for our latest software packages.</h2>
+
+            {% for software in site.data.softwares %}
+            <li>
+                <a href="{{ software.website }}" target="_blank"><img src="{{ software.img }}" class="software-image"
+                        width="182" height="182" style="background-color:white" /></a>
+                <h3>{{ software.name }}</h3>
+                <p>{{ software.description }}</p>
+            </li>
+            {% endfor %}
+
+            <h2>- developed during the PI's Ph.D. or postdoctoral fellowship and shortly thereafter:</h2>
+
+            {% for software in site.data.before_softwares %}
+            <li>
+                <a href="{{ software.website }}" target="_blank"><img src="{{ software.img }}" class="software-image"
+                        width="182" height="182" style="background-color:white" /></a>
+                <h3>{{ software.name }}</h3>
+                <p>{{ software.description }}</p>
+            </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+
+</div>

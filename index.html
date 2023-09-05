@@ -1,1 +1,60 @@
-<meta http-equiv="refresh" content="0; url=http://kepbod.com" />
+---
+layout: default
+---
+
+<div id="content">
+    <div id="sidebar_container">
+        <div class="sidebar">
+            <h2 style="color: #F14E23">Available positions</h2>
+            <br>
+            <p>Join our team of motivated researchers at the Xiao-Ou Zhang Lab! We're focused on comprehending noncoding
+                sequences,
+                gene regulation, and precision medicine for human diseases. Using computational and data-driven methods,
+                we develop
+                innovative algorithms, statistical tools, and advanced bioinformatics technologies. These tools enable
+                us to analyze
+                diverse sequencing data types, including second and third-generation sequencing and single-cell
+                sequencing, to uncover
+                biomedical insights.</p>
+            <p>If you're interested in being part of our dynamic research environment, send your CV and research
+                interests to <a href="mailto:zhangxiaoou@tongji.edu.cn">
+                    zhangxiaoou@tongji.edu.cn</a>. We're welcoming applications for postdocs, graduate students,
+                research assistants, and undergraduate research interns. Join us in driving groundbreaking discoveries!
+            </p>
+        </div>
+    </div>
+    <div id="main_column">
+        <h1>Welcome!</h1>
+        <p>We are a computational biology group based at the <a target="_blank"
+                href="https://life.tongji.edu.cn/">School of Life Sciences and Technology</a>, <a target="_blank"
+                href="https://www.tongji.edu.cn/">Tongji University</a>. Our primary focus is to unravel the intricate
+            and diverse mechanisms that underlie gene regulation driven by non-coding sequences at the transcriptome
+            level. We specialize in the developing of sophisticated methods tailored for the statistical and integrative
+            analysis of multi-omics high-throughput data. Through these meticulously crafted investigative approachs, we
+            delve into the pivotal role of repetitive sequences, with particular emphasis on transposable elements
+            (TEs), in the control of gene expression. In parallel, We strive to unravel the complexity of
+            transcriptional and post-transcriptional gene expression regulation, along with elucidating the mechanisms
+            governing the biogenesis of non-coding RNAs and their vital biological functions. Our research contributes
+            to advancing the understanding of non-coding sequences and their relevance in human health and disease
+            therapeutics.</p>
+        <div id="slides">
+            <div class="slides_container">
+                {% for study in site.data.research %}
+                <div class="slide" style="overflow-y: auto;">
+                    <h3>{{ study.title }}</h3>
+                    <div style="float: right; display: block; width:190px; overflow:hidden; margin-left:5px;">
+                        <img src="{{ study.img }}" width="185" height="185"
+                            style="background: white; border: 0px solid #888;" />
+                        <div style="clear:both;"></div>
+                    </div>
+                    <p>{{ study.text }}</p>
+                </div>
+                {% endfor %}
+            </div>
+            <a href="#" class="nav prev"><i class="icon-chevron-left "></i></a>
+            <a href="#" class="nav next"><i class="icon-chevron-right "></i></a>
+        </div>
+        <div class="clear"></div>
+
+    </div>
+</div>

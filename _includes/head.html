@@ -1,0 +1,30 @@
+<head>
+    <title>{{ site.title }}</title>
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/minor.js"></script>
+    <script src="assets/js/slides.js"></script>
+
+    <meta name="description" content="{{ site.description }}" />
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Tangerine&amp;v1" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz" />
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon/favicon-16x16.png" />
+    <link rel="manifest" href="images/icons/favicon/site.webmanifest" />
+
+    <script>
+        $(function () {
+            $("#slides").slides({
+                play: 20000,
+                pause: 40000,
+                hoverPause: true,
+                fadeSpeed: 10,
+                generatePagination: true
+            }
+            );
+        });
+    </script>
+
+</head>

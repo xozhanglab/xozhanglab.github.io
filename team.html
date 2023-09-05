@@ -1,0 +1,62 @@
+---
+layout: default
+---
+
+<div id="content">
+    <div>
+        <ul id="portraits">
+            <li>
+                <div class="photo pic1">
+                    <img src="images/team/xiaoou.jpg" alt="Xiao-Ou Zhang" />
+                </div>
+                <div class="info">
+                    <h3>Xiao-Ou Zhang (PI)</h3>
+                    <p>
+                        <i class="icon-envelope"></i>
+                        <a href="mailto:zhangxiaoou@tongji.edu.cn"><u>zhangxiaoou@tongji.edu.cn</u></a>
+                        <br>
+                        <i class="icon-home"></i>
+                        <a target="_blank" href="https://kepbod.com"><u>kepbod.com</u></a>
+                        <br>
+                        <i class="icon-github-sign"></i>
+                        <a target="_blank" href="https://github.com/kepbod"><u>@kepbod</u></a>
+                        <br>
+                        <i class="icon-map-marker"></i>
+                        <u>1239 Siping Road, Shanghai 200092</u>
+                    </p>
+                    Xiao-Ou earned a B.E. in Biological Engineering from Huazhong Agricultural University and a B.S. in
+                    Computer Science from Huazhong University of Science and Technology in 2011. He then received his
+                    Ph.D. in Computational Biology from the CAS-MPG Partner Institute (PICB), Shanghai Institutes for
+                    Biological Sciences (SIBS), Chinese Academy of Sciences (CAS) for Computational Biology in 2016.
+                    During his Ph.D. period, he primarily focused on studying the biogenesis and processing mechanisms
+                    of long noncoding RNAs with unique structures under the advisement of <a target="_blank"
+                        href="https://yanglab.github.io/">Prof. Li Yang</a> and <a target="_blank"
+                        href="http://chenlab-rna.sibcb.ac.cn/">Prof. Ling-Ling Chen</a>. He joined the lab of <a
+                        target="_blank" href="https://www.umassmed.edu/zlab/">Prof. Zhiping Weng</a> at UMass Chan
+                    Medical School as a postdoctoral fellow in 2016, where he developed computational methods to study
+                    the functions of repetitive sequences in gene regulation. In 2020, he joined the School of Life
+                    Sciences and Technology at Tongji University as a professor and a group leader. His research focuses
+                    on developing computational algorithms and conducting big data mining on high-throughput data to
+                    investigate gene regulation driven by noncoding sequences. </p>
+                </div>
+            </li>
+
+            {% for member in site.data.team %}
+            <li>
+                <div class="photo pic{{ member.id | modulo: 4 | plus: 1}}">
+                    <img src="{{ member.pic }}" alt="{{ member.name }}" />
+                </div>
+                <div class="info">
+                    <h3>{{ member.name }}</h3>
+                    <p>
+                        e-mail: <a href="mailto:{{ member.email }}"><u>{{ member.email }}</u></a>
+                    </p>
+                    <p>
+                        {{ member.bio }}
+                    </p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
