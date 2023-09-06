@@ -1,0 +1,35 @@
+- id: 1
+  name: Zhongren Hu
+  pic: /images/team/huzhongren.jpg
+  email: 2011399@tongji.edu.cn
+  bio: Zhongren earned a B.S. in Bioinformatics from Tongji University in 2020 and joined Prof. Xiao-Ou Zhang's lab as a doctoral student in the same year. His research focuses on developing computational methods for detecting transposition events based on long-read sequencing.
+- id: 2
+  name: Bo Xu
+  pic: /images/team/xubo.jpg
+  email: 1194189468@qq.com
+  bio: 2016-2020 | Bachelor of Bioinformatics, Tongji University, 2020-present | PhD candidate of Biology, expected 2026, Tongji University. He is focused on profiling transposon insertion in human and fly, and studying the piRNA cluster conservation in mammal's evolution. The final aim is answering how piRNA clusters function in silencing transposon insertion and regulating gene expression.
+- id: 3
+  name: Hanxi Shi
+  pic: /images/team/shihanxi.jpg
+  email: 2111266@tongji.edu.cn
+  bio: Hanxi earned her B.S. in Biology from Tongji University in 2021 and subsequently joined Professor Zhang’s lab to pursue her Ph.D. studies. Her research primarily focuses on investigating the intricate mechanisms underlying the involvement of transposable elements (TEs) in the regulation of gene expression.
+- id: 4
+  name: Ruofan Huang
+  pic: /images/team/huangruofan.jpg
+  email: ruofanhuang@tongji.edu.cn
+  bio: Ruofan obtained a B.E. in Biological Engineering from Beijing University of Chemical and Technology in 2021. She then embarked on her Ph.D. journey under the guidance of Professor Zhang at Tongji University. During her Ph.D. period, she primarily focuses on studying the biogenesis, processing mechanisms, and gene regulation of small noncoding RNAs. Her research, in particular, contributes to advancing the understanding of non-coding sequences and their relevance in human health and disease therapeutics.
+- id: 5
+  name: Xiaobing Gu
+  pic: /images/team/guxiaobing.jpg
+  email: 2131421@tongji.edu.cn
+  bio: Gu Xiaobing obtained a Bachelor’s degree in Bioengineering from East China University of Science and Technology in 2021, and subsequently joined Professor Zhang’s laboratory for her Master’s degree studies. She is currently focused on systematic exploration and evolutionary research of transposon-derived promoters, as well as the establishment of a database.
+- id: 6
+  name: Mingdong Wang
+  pic: /images/team/wangmingdong.jpg
+  email: 2231482@tongji.edu.cn
+  bio: I studied bioinformatics in Tongji University as an undergraduate and joined this lab after graduation. I am currently pursuing my master's degree at Tongji University under the supervision of Prof. Xiao-Ou Zhang. Currently I am studying the biological role of enhancers. I hope I can be successful in the near future.
+- id: 7
+  name: Lingfeng Xu
+  pic: /images/team/xulingfeng.jpg
+  email: 2311465@tongji.edu.cn
+  bio: I studied bioinformatics as an undergraduate in Tongji University, and once made a superficial study on circular RNA. Now I am studying as a postgraduate in Professor Xiao-Ou Zhang 's lab, and I am trying to work on single-cell sequencing data. I am very interested in biology and machine learning, and you are welcome to communicate with me.
