@@ -33,3 +33,13 @@
   pic: /images/team/xulingfeng.jpg
   email: 2311465@tongji.edu.cn
   bio: I studied bioinformatics as an undergraduate in Tongji University, and once made a superficial study on circular RNA. Now I am studying as a postgraduate in Professor Xiao-Ou Zhang 's lab, and I am trying to work on single-cell sequencing data. I am very interested in biology and machine learning, and you are welcome to communicate with me.
+- id: 8
+  name: Mengyao Cui
+  pic: /images/team/cuimengyao.jpg
+  email: 2311459@tongji.edu.cn
+  bio: Mengyao Cui received her B.S. in Applied Statistics from Northeastern University in 2023 and then joined Prof. Zhang's lab for her PhD. She is trying to engage in research that combines knowledge of mathematics and biology, and hopes to achieve some results.
+- id: 9
+  name: Jing Yan
+  pic: /images/team/yanjing.jpg
+  email: 2333161@tongji.edu.cn
+  bio: Jing Yan graduated from Huazhong Agricultural University in 2023 with a Bachelor's degree in Bioinformatics and subsequently joined Professor Zhang's laboratory to pursue a Master's degree. She is committed to exploring uncharted territories within biology and seeking innovative approaches to problem-solving. Continuously enhancing her research capabilities, she strives to achieve her scientific goals and professional ambitions.
