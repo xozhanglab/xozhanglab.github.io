@@ -1,4 +1,4 @@
-- name: TETSS database
+- name: TE-TSS database
   img: /images/softwares/TETSS.jpg
   website: http://xozhanglab.com/TETSS
-  description: TETSS is a database for transposon (TE)-derived transcription start sites (TSSs). It provides a comprehensive collection of TE-derived TSSs in humans and mice, and enables users to search, browse, and download TETSSs and their usage across different biosamples.
+  description: TE-TSS is a database for transposon (TE)-derived transcription start sites (TSSs). It provides a comprehensive collection of TE-derived TSSs in humans and mice, and enables users to search, browse, and download TETSSs and their usage across different biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et al., Nucleic Acids Res, 2023)</a>
