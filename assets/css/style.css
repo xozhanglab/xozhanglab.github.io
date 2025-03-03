@@ -560,16 +560,13 @@ a.searchbox {
 .publication {
   display: grid;
   grid-template-columns: 1fr auto;
-  /* Two columns: first is flexible, second is auto-sized */
   align-items: center;
   gap: 20px;
-  /* Gap between the two columns */
 }
 
 .pubtitle {
   font-size: 120%;
   margin: 0 0 3px 0;
-  /*color: #444;   */
   color: #F14E23;
 }
 
@@ -592,7 +589,6 @@ a.searchbox {
   border-top: none;
   display: none;
   font: 90% arial, sans-serif;
-  /*display:none;*/
 }
 
 .software-image {
@@ -1485,4 +1481,36 @@ li[class*=" icon-"].icon-large:before {
 
 .icon-lemon:before {
   content: "\f094"
+}
+
+.section-header {
+  font-size: 2em;
+  margin-top: 10px;
+  color: #F14E23;
+}
+
+.alumni-header {
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  margin-top: 40px;
+}
+
+#alumni-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+#alumni-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  vertical-align: top;
+}
+
+#alumni-table .alumni-name {
+  font-weight: bold;
+  color: #F14E23;
+}
+
+#alumni-table .alumni-info {
+  color: #555;
 }

@@ -4,6 +4,7 @@ layout: default
 
 <div id="content">
     <div>
+        <h2 class="section-header">Current Members</h2>
         <ul id="portraits">
             <li>
                 <div class="photo pic1">
@@ -58,5 +59,32 @@ layout: default
             </li>
             {% endfor %}
         </ul>
+
+        <h2 class="section-header alumni-header" onclick="toggleAlumni()">Alumni <span id="alumni-toggle-symbol"><i class="icon-chevron-down"></i></span></h2>
+        <table id="alumni-table" style="display: none;">
+            <tbody>
+                {% for alumni in site.data.alumni %}
+                <tr>
+                    <td class="alumni-name">{{ alumni.name }}</td>
+                    <td class="alumni-info">{{ alumni.info }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        
     </div>
 </div>
+
+<script>
+function toggleAlumni() {
+    var table = document.getElementById("alumni-table");
+    var symbol = document.getElementById("alumni-toggle-symbol").firstElementChild;
+    if (table.style.display === "none") {
+        table.style.display = "table";
+        symbol.className = "icon-chevron-up";
+    } else {
+        table.style.display = "none";
+        symbol.className = "icon-chevron-down";
+    }
+}
+</script>
