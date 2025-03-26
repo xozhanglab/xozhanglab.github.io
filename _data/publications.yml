@@ -1,7 +1,9 @@
 - title: "The dynamic landscape of 3′-UTR alternative polyadenylation across mouse fetal development and anatomy."
   authors: "Wang Q*, Chen X*, <b>Zhang XO</b>†"
-  journal: "Advanced Science. 2025. In Press"
+  journal: "Advanced Science. 2025. 40126195. DOI: 10.1002/advs.202502443"
+  pmid: "40126195"
   hot: true
+  abstract: "Alternative cleavage and polyadenylation (APA) in the 3'-untranslated region (3'-UTR) of mRNA produces transcripts with varied 3'-UTR and plays a key role in development and organogenesis. This work characterizes 3'-UTR APA using 85 high-quality RNA-seq datasets encompassing 12 tissue types and eight developmental stages of mouse fetuses. Results show that 46.4% of expressed genes undergo APA in a tissue-specific manner. Changes in polyadenylation site (pAS) usage often operate beyond transcriptional control, revealing APA as an additional layer of gene regulation. Sequence analysis demonstrates that pAS selection, governed by polyadenylation signal strength and adenine preferences, is evolutionarily conserved between mice and humans. Intriguingly, brain tissues display complex 3'-UTR APA dynamics during development, potentially regulated by RNA-binding proteins such as Rbm38, potentially impacting 3' UTR extension by restricting distal pAS usage. These APA events are associated with a depletion of conserved miRNA binding sites and an enrichment of transposable elements within alternative 3' UTRs. To facilitate further research, this work develops APApedia (http://xozhanglab.com/apapedia/), a comprehensive database cataloging identified 3'-UTR APA events, which serves as a valuable resource for the community to study APA in development and tissue-specific regulation. This comprehensive resource aids in deciphering the functional implications of APA in mouse fetal development."
 
 - title: "Capture of totipotency in mouse embryonic stem cells in the absence of Pdzk1."
   authors: "Zhang W, Zhao Y, Yang Z, Yan J, Wang H, Nie S, Jia Q, Ding D, Tong C†, <b>Zhang XO</b>†, Gao Q†, Shuai L†"
