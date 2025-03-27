@@ -1,4 +1,8 @@
+- name: APApedia database
+  img: /images/softwares/APApedia.jpg
+  website: http://xozhanglab.com/apapedia
+  description: APApedia is a comprehensive database dedicated to unraveling the dynamics of alternative cleavage and polyadenylation (APA) during developmental processes. It provides an extensive collection of APA events in humans and mice, encompassing a wide range of developmental contexts. <a href="https://pubmed.ncbi.nlm.nih.gov/40126195">(Wang et al., Advanced Science, 2025)</a>
 - name: TE-TSS database
   img: /images/softwares/TETSS.jpg
   website: http://xozhanglab.com/TETSS
-  description: TE-TSS is a database for transposon (TE)-derived transcription start sites (TSSs). It provides a comprehensive collection of TE-derived TSSs in humans and mice, and enables users to search, browse, and download TETSSs and their usage across different biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et al., Nucleic Acids Res, 2023)</a>
+  description: TE-TSS is a database for transposon (TE)-derived transcription start sites (TSSs). It provides a comprehensive collection of TE-derived TSSs in humans and mice, and enables users to search, browse, and download TETSSs and their usage across different biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et al., Nucleic Acids Research, 2023)</a>
