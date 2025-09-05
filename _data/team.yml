@@ -19,31 +19,26 @@
   email: ruofanhuang@tongji.edu.cn
   bio: Ruofan obtained a B.E. in Biological Engineering from Beijing University of Chemical and Technology in 2021. She then embarked on her Ph.D. journey under the guidance of Professor Zhang at Tongji University. During her Ph.D. period, she primarily focuses on studying the biogenesis, processing mechanisms, and gene regulation of small noncoding RNAs. Her research, in particular, contributes to advancing the understanding of non-coding sequences and their relevance in human health and disease therapeutics.
 - id: 5
-  name: Mingdong Wang
-  pic: /images/team/wangmingdong.jpg
-  email: 2231482@tongji.edu.cn
-  bio: I studied bioinformatics in Tongji University as an undergraduate and joined this lab after graduation. I am currently pursuing my master's degree at Tongji University under the supervision of Prof. Xiao-Ou Zhang. Currently I am studying the biological role of enhancers. I hope I can be successful in the near future.
-- id: 6
   name: Lingfeng Xu
   pic: /images/team/xulingfeng.jpg
   email: 2311465@tongji.edu.cn
   bio: I studied bioinformatics as an undergraduate in Tongji University, and once made a superficial study on circular RNA. Now I am studying as a postgraduate in Professor Xiao-Ou Zhang 's lab, and I am trying to work on single-cell sequencing data. I am very interested in biology and machine learning, and you are welcome to communicate with me.
-- id: 7
+- id: 6
   name: Mengyao Cui
   pic: /images/team/cuimengyao.jpg
   email: 2311459@tongji.edu.cn
   bio: Mengyao Cui received her B.S. in Applied Statistics from Northeastern University in 2023 and then joined Prof. Zhang's lab for her PhD. She is trying to engage in research that combines knowledge of mathematics and biology, and hopes to achieve some results.
-- id: 8
+- id: 7
   name: Jing Yan
   pic: /images/team/yanjing.jpg
   email: 2333161@tongji.edu.cn
   bio: Jing Yan graduated from Huazhong Agricultural University in 2023 with a Bachelor's degree in Bioinformatics and subsequently joined Professor Zhang's laboratory to pursue a Master's degree. She is committed to exploring uncharted territories within biology and seeking innovative approaches to problem-solving. Continuously enhancing her research capabilities, she strives to achieve her scientific goals and professional ambitions.
-- id: 9
+- id: 8
   name: Siyu Xu
   pic: /images/team/xusiyu.jpg
   email: syxu0912@tongji.edu.cn
   bio: Siyu Xu graduated with a B.S. in Bioinformatics from Soochow University in 2024 and is currently pursuing her Master's degree in Biology under the mentorship of Prof. Xiao-Ou Zhang at Tongji University. Her research focuses on using scRNA-seq data to identify transcription start sites (TSS) and explore their role in cellular phenotypes and regulatory patterns. She hopes to gain a deeper understanding of the mechanisms of transcriptional regulation and provide new perspectives and methods for research on related diseases.
-- id: 10
+- id: 9 
   name: Yubo Liu
   pic: /images/team/liuyubo.jpg
   email: 2433326@tongji.edu.cn
