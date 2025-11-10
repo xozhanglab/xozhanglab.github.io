@@ -8,7 +8,7 @@
 - title: "SETDB1 promotes mammalian liver regeneration by stimulating cytokine CSF3 in hepatocytes"
   authors: "Huang XY*, Yang D*, Liu YZ*, Zhang EX, Yang Q, Kang W, <b>Zhang XO</b>, Shi J, Song CQ†"
   journal: "Cell Reports. 2025, 44:115843. DOI: 10.1016/j.celrep.2025.115843"
-  doi: " 10.1016/j.celrep.2025.115843"
+  doi: "10.1016/j.celrep.2025.115843"
   hot: false 
   abstract: "Discovering mechanisms of regeneration holds great promise for advancing regenerative medicine. Non-histone modifications by epigenetic factors participate in important biological processes. Through in vivo CRISPR screening combined with partial hepatectomy (PHx-CRISPR), we identified the histone H3K9 methyltransferase SETDB1 as an enhancer of regeneration. Loss of SETDB1 delays regeneration, and overexpressing SETDB1 accelerates liver regeneration across various liver injury models. SETDB1 promotes liver regeneration by positively regulating the expression of granulocyte colony-stimulating factor (CSF3) in hepatocytes. SETDB1 facilitates the expression of CSF3 in hepatocytes by methylating and activating AKT, establishing CSF3 as a critical downstream effector in the SETDB1-AKT liver regeneration pathway. Notably, increasing SETDB1 levels in humanized mouse liver suppresses drug-induced liver damage. Our findings reveal an unexpected role for non-histone modification by SETDB1 in regulating cytokine signaling during liver regeneration and offer insights into targeted therapies for regenerative medicine and tissue repair. "
 
@@ -36,7 +36,7 @@
 - title: "Unveiling circRNA-mediated ceRNA networks in ischemic stroke by integrative analysis of multi-source gene expression profiling"
   authors: "Ya Zhang, <b>Zhang XO</b>†"
   journal: "Heliyon. 2024, 10:e36988. DOI: 10.1016/j.heliyon.2024.e36988"
-  doi: " 10.1016/j.heliyon.2024.e36988"
+  doi: "10.1016/j.heliyon.2024.e36988"
   hot: true 
   abstract: "Circular RNAs (circRNAs) are emerging as potential therapeutic targets for ischemic stroke (IS) due to their regulatory roles in inflammation and apoptosis. This study aimed to develop a comprehensive and robust IS-specific competing endogenous RNA (ceRNA) network to facilitate the identification of novel diagnostic and therapeutic targets. We integrated expression data from 15 IS studies using the Rank-In algorithm to minimize batch effects. Differentially expressed circRNAs, miRNAs, and mRNAs were identified by comparing IS and control samples. Functional enrichment analysis of differentially expressed circRNA host genes revealed significantly enriched pathways and Gene Ontology (GO) terms relevant to IS pathogenesis. We further predicted miRNA-circRNA and mRNA-miRNA interactions, enabling the construction of a comprehensive ceRNA network to identify circRNA-related genes with diagnostic potential for IS. Integrated analysis revealed 199 differentially expressed circRNAs, 103 miRNAs, and 1736 mRNAs in IS patients. Functional enrichment analysis implicated these molecules in relevant pathways like the neurotrophin signaling pathway and p53 signaling pathway. The constructed circRNA-miRNA-mRNA regulatory network provided insights into potential mechanisms underlying IS. Three circRNA-related genes (RGS2, CDK5R1, and NSF) displayed promising diagnostic potential for IS when combined. We successfully constructed a robust and informative IS-specific ceRNA network by integrating data from diverse sources. This network identified differentially expressed RNAs and revealed enriched pathways potentially involved in IS pathogenesis. Notably, our analysis identified CDK5R1, RGS2, and NSF as potential diagnostic biomarkers for IS. This study sheds light on a circRNA-mediated regulatory network with potential diagnostic and therapeutic implications for ischemic stroke. "
 
@@ -242,7 +242,7 @@
   abstract: "Adenosine deaminases acting on RNA (ADARs) are involved in adenosine-to-inosine RNA editing and are implicated in development and diseases. Here we observed that ADAR1 deficiency in human embryonic stem cells (hESCs) significantly affected hESC differentiation and neural induction with widespread changes in mRNA and miRNA expression, including upregulation of self-renewal-related miRNAs, such as miR302s. Global editing analyses revealed that ADAR1 editing activity contributes little to the altered miRNA/mRNA expression in ADAR1-deficient hESCs upon neural induction. Genome-wide iCLIP studies identified that ADAR1 binds directly to pri-miRNAs to interfere with miRNA processing by acting as an RNA-binding protein. Importantly, aberrant expression of miRNAs and phenotypes observed in ADAR1-depleted hESCs upon neural differentiation could be reversed by an enzymatically inactive ADAR1 mutant, but not by the RNA-binding-null ADAR1 mutant. These findings reveal that ADAR1, but not its editing activity, is critical for hESC differentiation and neural induction by regulating miRNA biogenesis via direct RNA interaction."
 
 - title: "Gene expression profiling of non-polyadenylated RNA-seq across species"
-  Autors: "<b>Zhang XO</b>, Yin QF, Chen LL, Yang L†"
+  autors: "<b>Zhang XO</b>, Yin QF, Chen LL, Yang L†"
   journal: "Genomics Data. 2014, 2:237-241. DOI: 10.1016/j.gdata.2014.07.005"
   doi: "10.1016/j.gdata.2014.07.005"
   hot: true
