@@ -19,10 +19,10 @@ layout: default
                         <div class="pubauthors">{{ paper.authors }}</div>
                         <div class="pubjournal">{{ paper.journal }}</div>
                         <div class="publinks"> <a target="_blank"
-                                href="http://www.ncbi.nlm.nih.gov/pubmed/{{ paper.pmid }}">[PubMed]</a> </div>
+                                href="https://doi.org/{{ paper.doi }}">[Link]</a> </div>
                     </div>
                     <div>
-                        <span class="__dimensions_badge_embed__" data-pmid="{{ paper.pmid }}"
+                        <span class="__dimensions_badge_embed__" data-pmid="{{ paper.doi }}"
                             data-style="small_circle"></span>
                         <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
                     </div>
