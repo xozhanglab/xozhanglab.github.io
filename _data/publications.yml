@@ -1,3 +1,16 @@
+- title: "Architectural and evolutionary features of TE-derived TSSs shape tissue-specific promoter activity in the human genome"
+  authors: "Zhang Y†, Fan Y, Wu H, <b>Zhang XO<b>†"
+  journal: "Nature Communications. 2026. DOI: 10.1038/s41467-026-68934-y"
+  doi: "10.1038/s41467-026-68934-y"
+  hot: true
+  abstract: "Transposable elements are abundant in the human genome and have been increasingly recognized as sources of alternative promoters. Yet, the extent of their transcriptional activity in human tissues and the features that govern their regulatory potential remain unclear. Here, we integrated high-resolution RAMPAGE data from 115 human biosamples to construct a comprehensive atlas of 26,056 transcription start sites derived from transposable elements. These sites contribute to tissue-specific gene expression, with a notable fraction originating from primate- and hominid-specific elements. Transposable element–derived transcription start sites exhibit focused, narrow-peak architectures enriched for TATA boxes and depleted of CpG islands. Phylogenetic analyses reveal a continuous gradient in promoter strength and transcriptional precision across transposable element subfamilies, with evolutionarily younger elements retaining intrinsic promoter motifs that drive focused and robust transcription, whereas older, more divergent elements exhibit broader initiation patterns and lower intrinsic activity. Together, these findings advance our understanding of how the evolution and preservation of promoter features shape the capacity of transposable elements to be exapted as functional promoters, potentially contributing to lineage-specific regulatory innovation in primates."
+
+- title: "Hmgn3 is critical for inducing totipotency in mouse embryonic stem cells"
+  authors: "Wang Q*, Zhao Y*, Li X*, Geng M*, Liu Y*, Bai Y, Yan J, <b>Zhang XO</b>, Liu D, Zhang Y†, Zhang W†, Gao Q†, Shuai L†."
+  journal: "Science Bulletin. 2025. DOI: 10.1016/j.scib.2025.10.025"
+  doi: "10.1016/j.scib.2025.10.025"
+  hot: false 
+
 - title: "PANDORA-seq reveals human sperm sncRNA signature endowed with sperm quality assessment"
   authors: "Huang R*, Yang Y*, Jiang W, Cao Z, Shi J†, <b>Zhang XO</b>†, Zhang Y†"
   journal: "Genes & Diseases. 2025, 101807. DOI: 10.1016/j.gendis.2025.101807"
@@ -20,7 +33,7 @@
   abstract: "Alternative cleavage and polyadenylation (APA) in the 3'-untranslated region (3'-UTR) of mRNA produces transcripts with varied 3'-UTR and plays a key role in development and organogenesis. This work characterizes 3'-UTR APA using 85 high-quality RNA-seq datasets encompassing 12 tissue types and eight developmental stages of mouse fetuses. Results show that 46.4% of expressed genes undergo APA in a tissue-specific manner. Changes in polyadenylation site (pAS) usage often operate beyond transcriptional control, revealing APA as an additional layer of gene regulation. Sequence analysis demonstrates that pAS selection, governed by polyadenylation signal strength and adenine preferences, is evolutionarily conserved between mice and humans. Intriguingly, brain tissues display complex 3'-UTR APA dynamics during development, potentially regulated by RNA-binding proteins such as Rbm38, potentially impacting 3' UTR extension by restricting distal pAS usage. These APA events are associated with a depletion of conserved miRNA binding sites and an enrichment of transposable elements within alternative 3' UTRs. To facilitate further research, this work develops APApedia (http://xozhanglab.com/apapedia/), a comprehensive database cataloging identified 3'-UTR APA events, which serves as a valuable resource for the community to study APA in development and tissue-specific regulation. This comprehensive resource aids in deciphering the functional implications of APA in mouse fetal development."
 
 - title: "Capture of totipotency in mouse embryonic stem cells in the absence of Pdzk1"
-  authors: "Zhang W, Zhao Y, Yang Z, Yan J, Wang H, Nie S, Jia Q, Ding D, Tong C†, <b>Zhang XO</b>†, Gao Q†, Shuai L†"
+  authors: "Zhang W*, Zhao Y*, Yang Z*, Yan J*, Wang H*, Nie S, Jia Q, Ding D, Tong C†, <b>Zhang XO</b>†, Gao Q†, Shuai L†"
   journal: "Advanced Science. 2025, 12:e2408852. DOI: 10.1002/advs.202408852"
   doi: "10.1002/advs.202408852"
   hot: true 
@@ -77,7 +90,7 @@
 
 - title: "PRMT5 activates AKT via methylation to promote tumor metastasis"
   authors: "Huang L, <b>Zhang XO</b>, Rozen EJ, Sun X, Sallis B, Verdejo-Torres O, Wigglesworth K, Moon D, Huang T, Cavaretta JP, Wang G, Zhang L, Shohet JM, Lee MM†, Wu Q†"
-  journal: "Nat Communication. 2022, 13:3955. DOI: 10.1038/s41467-022-31645-1"
+  journal: "Nature Communications. 2022, 13:3955. DOI: 10.1038/s41467-022-31645-1"
   doi: "10.1038/s41467-022-31645-1"
   hot: false
   abstract: "Protein arginine methyltransferase 5 (PRMT5) is the primary methyltransferase generating symmetric-dimethyl-arginine marks on histone and non-histone proteins. PRMT5 dysregulation is implicated in multiple oncogenic processes. Here, we report that PRMT5-mediated methylation of protein kinase B (AKT) is required for its subsequent phosphorylation at Thr308 and Ser473. Moreover, pharmacologic or genetic inhibition of PRMT5 abolishes AKT1 arginine 15 methylation, thereby preventing AKT1 translocation to the plasma membrane and subsequent recruitment of its upstream activating kinases PDK1 and mTOR2. We show that PRMT5/AKT signaling controls the expression of the epithelial-mesenchymal-transition transcription factors ZEB1, SNAIL, and TWIST1. PRMT5 inhibition significantly attenuates primary tumor growth and broadly blocks metastasis in multiple organs in xenograft tumor models of high-risk neuroblastoma. Collectively, our results suggest that PRMT5 inhibition augments anti-AKT or other downstream targeted therapeutics in high-risk metastatic cancers."
@@ -154,7 +167,7 @@
 
 - title: "Chemical modifications of adenine base editor mRNA and guide RNA expand its application scope"
   authors: "Jiang T, Henderson JM, Coote K, Cheng Y, Valley HC, <b>Zhang XO</b>, Wang Q, Rhym LH, Cao Y, Newby GA, Bihler H, Mense M, Weng Z, Anderson DG, McCaffrey AP, Liu DR, Xue W†"
-  journal: "Nat Communication. 2020, 11:1979. DOI: 10.1038/s41467-020-15892-8"
+  journal: "Nature Communications. 2020, 11:1979. DOI: 10.1038/s41467-020-15892-8"
   doi: "10.1038/s41467-020-15892-8"
   hot: false
   abstract: "CRISPR-Cas9-associated base editing is a promising tool to correct pathogenic single nucleotide mutations in research or therapeutic settings. Efficient base editing requires cellular exposure to levels of base editors that can be difficult to attain in hard-to-transfect cells or in vivo. Here we engineer a chemically modified mRNA-encoded adenine base editor that mediates robust editing at various cellular genomic sites together with moderately modified guide RNA, and show its therapeutic potential in correcting pathogenic single nucleotide mutations in cell and animal models of diseases. The optimized chemical modifications of adenine base editor mRNA and guide RNA expand the applicability of CRISPR-associated gene editing tools in vitro and in vivo."
