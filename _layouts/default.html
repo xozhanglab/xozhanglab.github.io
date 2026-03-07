@@ -9,6 +9,22 @@
         {{ content }}
         {% include footer.html %}
     </div>
+    <!-- Scripts are placed at the end of <body> so they do not block
+         the browser from rendering the page content above. -->
+    <script src="assets/js/jquery.js"></script>
+    <script src="assets/js/slides.js"></script>
+    <script src="assets/js/minor.js"></script>
+    <script>
+        $(function () {
+            $("#slides").slides({
+                play: 20000,
+                pause: 40000,
+                hoverPause: true,
+                fadeSpeed: 10,
+                generatePagination: true
+            });
+        });
+    </script>
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/app.js"></script>
 </body>
