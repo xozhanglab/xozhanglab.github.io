@@ -43,3 +43,13 @@
   pic: /images/team/liuyubo.jpg
   email: 2433326@tongji.edu.cn
   bio: Yubo Liu graduated from Tongji University in 2024 with a bachelor's degree in bioinformatics and subsequently joined Prof. Xiao-Ou Zhang's research team. My work primarily focuses on the quantification and algorithm development of transposons at the single-cell level. Welcome everyone to communicate with me and exchange ideas.
+  - id: 10 
+  name: Junru Wang 
+  pic: /images/team/wangjunru.jpg
+  email: 2511592@tongji.edu.cn
+  bio: Junru Wang earned her Bachelor of Science degree in Bioinformatics from Tongji University in 2025 and subsequently joined Xiao-Ou Zhang’s Lab to pursue her Ph.D. Her current research focuses primarily on circular RNAs and single-cell sequencing, and she aims to address practical biological problems through algorithm development and data analysis.
+  - id: 11 
+  name: Yue Shi 
+  pic: /images/team/shiyue.jpg
+  email: 2533126@tongji.edu.cn
+  bio: Yue Shi graduated from Harbin Medical University in 2025 with a B.S. in Bioinformatics and is now working toward a Master's degree in Biology in the team of Prof. Xiao-Ou Zhang at Tongji University. His current work is dedicated to transcription start sites (TSS) and investigating their impact.
