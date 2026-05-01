@@ -1,4 +1,11 @@
 - title: "Architectural and evolutionary features of TE-derived TSSs shape tissue-specific promoter activity in the human genome"
+  authors: "Li Y*, Wang X*, Huang R*, Yu H, Wu Y, Shu Z, Jiang W, Cao Z, Yu Z, Li H, Yan R, Gao Y†, Zhang XO†, Zhang Y†"
+  journal: "Nature Communications. 2026. DOI: 10.1038/s41467-026-72603-5"
+  doi: "10.1038/s41467-026-72603-5"
+  hot: true
+  abstract: "Translational control is vital during the maternal-to-zygotic transition (MZT), yet the landscape of embryonic transfer RNA (tRNA) pools has been difficult to explore. Here, we develop Optimized Reaction for Accurate Capture of Low-input Entities tRNA Sequencing (ORACLE-tRNAseq), enabling robust tRNA profiling from as few as five mouse oocytes. We map tRNA landscapes from oocyte to blastocyst, identifying a distinct transition to embryonic tRNA repertoires and upregulation of tRNA pseudogenes at the 4-cell stage. Integrated multi-omics analyses reveal that zygotic tRNA gene activation coincides with zygotic genome activation (ZGA) and correlates with H3K4me3 establishment and chromatin remodeling. By coupling ORACLE-tRNAseq with Ribo-seq, we demonstrate that embryonic tRNA anticodon pools coordinate with high translation-efficiency gene pools to preferentially establish the zygotic translation machinery, particularly from major ZGA onwards. Collectively, these findings provide a resource for understanding translational regulatory networks during early embryogenesis."
+
+- title: "Architectural and evolutionary features of TE-derived TSSs shape tissue-specific promoter activity in the human genome"
   authors: "Zhang Y†, Fan Y, Wu H, <b>Zhang XO</b>†"
   journal: "Nature Communications. 2026, 17:2219. DOI: 10.1038/s41467-026-68934-y"
   doi: "10.1038/s41467-026-68934-y"
