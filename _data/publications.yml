@@ -139,7 +139,7 @@
 
 - title: "Investigating the potential roles of SINEs in the human genome"
   authors: "<b>Zhang XO</b>, Pratt HE, Weng Z†"
-  journal: "Annual Review of Genomics and Human Genetics. 2021. 22:199-218. DOI: 10.1146/annurev-genom-111620-100736"
+  journal: "Annual Review of Genomics and Human Genetics. 2021, 22:199-218. DOI: 10.1146/annurev-genom-111620-100736"
   doi: "10.1146/annurev-genom-111620-100736"
   hot: true
   abstract: "Short interspersed nuclear elements (SINEs) are nonautonomous retrotransposons that occupy approximately 13% of the human genome. They are transcribed by RNA polymerase III and can be retrotranscribed and inserted back into the genome with the help of other autonomous retroelements. Because they are preferentially located close to or within gene-rich regions, they can regulate gene expression by various mechanisms that act at both the DNA and the RNA levels. In this review, we summarize recent findings on the involvement of SINEs in different types of gene regulation and discuss the potential regulatory functions of SINEs that are in close proximity to genes, Pol III-transcribed SINE RNAs, and embedded SINE sequences within Pol II-transcribed genes in the human genome. These discoveries illustrate how the human genome has exapted some SINEs into functional regulatory elements."
@@ -186,7 +186,7 @@
   hot: true
   abstract: "Circular RNAs (circRNAs) are covalently closed RNAs derived from back-splicing of genes across eukaryotes. Through alternative back-splicing (ABS), a single gene produces multiple circRNAs sharing the same back-splice site. Although many ABS events have recently been discovered, to what extent ABS involves in circRNA biogenesis and how it is regulated in different human tissues still remain elusive. Here, we reported an in-depth analysis of ABS events in 90 human tissue transcriptomes. We observed that ABS occurred for about 84% circRNAs. Interestingly, alternative 5' back-splicing occurs more prevalently than alternative 3' back-splicing, and both of them are tissue-specific, especially enriched in brain tissues. In addition, the patterns of ABS events in different brain regions are similar to each other and are more complex than the patterns in non-brain tissues. Finally, the intron length and abundance of Alu elements positively correlated with ABS event complexity, and the predominant circRNAs had longer flanking introns and more Alu elements than other circRNAs in the same ABS event. Together, our results represent a resource for circRNA research-we expanded the repertoire of ABS events of circRNAs in human tissue transcriptomes and provided insights into the complexity of circRNA biogenesis, expression, and regulation."
 
-- title: "Depletion of TRRAP/KAT5 induces p53-independent senescence in liver cancer by regulating G2/M genes"
+- title: "Depletion of TRRAP induces p53-independent senescence in liver cancer by down-regulating mitotic genes"
   authors: "Kwan SY*, Sheel A*, Song CQ, <b>Zhang XO</b>, Dang H, Cao Y, Mou H, Yin H, Weng Z, Wang XW, Xue W†"
   journal: "Hepatology. 2020, 71:275-290. DOI: 10.1002/hep.30807"
   doi: "10.1002/hep.30807"
@@ -222,7 +222,7 @@
 
 - title: "Inhibition of protein arginine methyltransferase 5 enhances hepatic mitochondrial biogenesis"
   authors: "Huang L, Liu J, <b>Zhang XO</b>, Sibley K, Najjar SM, Lee MM†, Wu JQ†"
-  journal: "Journal of Biological Chemistry. 2018, 17:jbc-RA118. DOI: 10.1074/jbc.RA118.002377"
+  journal: "Journal of Biological Chemistry. 2018, 293:10884-10894. DOI: 10.1074/jbc.RA118.002377"
   doi: "10.1074/jbc.RA118.002377"
   hot: false
   abstract: "Protein arginine methyltransferase 5 (PRMT5) regulates gene expression either transcriptionally by symmetric dimethylation of arginine residues on histones H4R3, H3R8, and H2AR3 or at the posttranslational level by methylation of nonhistone target proteins. Although emerging evidence suggests that PRMT5 functions as an oncogene, its role in metabolic diseases is not well-defined. We investigated the role of PRMT5 in promoting high-fat-induced hepatic steatosis. A high-fat diet up-regulated PRMT5 levels in the liver but not in other metabolically relevant tissues such as skeletal muscle or white and brown adipose tissue. This was associated with repression of master transcription regulators involved in mitochondrial biogenesis. In contrast, lentiviral short hairpin RNA-mediated reduction of PRMT5 significantly decreased phosphatidylinositol 3-kinase/AKT signaling in mouse AML12 liver cells. PRMT5 knockdown or knockout decreased basal AKT phosphorylation but boosted the expression of peroxisome proliferator-activated receptor α (PPARα) and PGC-1α with a concomitant increase in mitochondrial biogenesis. Moreover, by overexpressing an exogenous WT or enzyme-dead mutant PRMT5 or by inhibiting PRMT5 enzymatic activity with a small-molecule inhibitor, we demonstrated that the enzymatic activity of PRMT5 is required for regulation of PPARα and PGC-1α expression and mitochondrial biogenesis. Our results suggest that targeting PRMT5 may have therapeutic potential for the treatment of fatty liver."

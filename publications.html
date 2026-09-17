@@ -25,10 +25,17 @@ layout: default
                     <div class="pubtitle">{{ paper.title }}{% if paper.hot %} <span class="hot-badge">&#9733;
                             Highlight</span>{% endif %}</div>
                     <div class="pubauthors">{{ paper.authors }}</div>
-                    {% assign journal_name = paper.journal | split: ". " | first %}
+                    {%- assign jparts = paper.journal | split: ". " -%}
+                    {%- assign journal_name = jparts[0] -%}
+                    {%- assign meta = jparts[1] | default: "" -%}
+                    {%- assign mparts = meta | split: ", " -%}
+                    {%- assign pub_year = mparts[0] -%}
+                    {%- assign pub_cite = mparts[1] -%}
                     <div class="pubmeta">
                         <span class="journal-badge">{{ journal_name }}</span>
-                        <span class="pubjournal">{{ paper.journal | remove_first: journal_name | remove_first: ". " }}</span>
+                        {% if pub_year != "" %}<span class="pub-year">{{ pub_year }}</span>{% endif %}
+                        {% if pub_cite %}<span class="pub-cite">{{ pub_cite }}</span>{% endif %}
+                        <span class="pub-doi">{{ paper.doi }}</span>
                     </div>
                     <div class="publinks">
                         <a class="doi-link" target="_blank" rel="noopener" href="https://doi.org/{{ paper.doi }}">Read paper <i

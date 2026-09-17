@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """Render the Jekyll pages with jinja2 (mimicking the small liquid subset
 used by the site) into preview/ so the pages can be served statically."""
+import glob
 import os
 import re
 import sys
@@ -24,7 +25,8 @@ PAGES = {
 
 def preprocess(src: str) -> str:
     # {% assign x = ... %} -> {% set x = ... %}
-    src = re.sub(r"\{%\s*assign\s+(\w+)\s*=\s*(.+?)\s*%\}", r"{% set \1 = \2 %}", src)
+    # Liquid whitespace-control markers ({%- -%}) are accepted too
+    src = re.sub(r"\{%-?\s*assign\s+(\w+)\s*=\s*(.+?)\s*-?%\}", r"{% set \1 = \2 %}", src)
     # {% include head.html %} -> {% include 'head.html' %}
     src = re.sub(r"\{%\s*include\s+(\S+)\s*%\}", r"{% include '\1' %}", src)
     # site.data.X.size -> datalen('X')
@@ -92,12 +94,16 @@ def main():
         }
     )
 
-    if os.path.isdir(OUT):
-        shutil.rmtree(OUT)
-    os.makedirs(OUT)
+    # Rebuild in place: deleting the directory would break a running
+    # preview_server, which holds the old inode.
+    os.makedirs(OUT, exist_ok=True)
+    for stale in glob.glob(os.path.join(OUT, "*.html")):
+        os.remove(stale)
 
     for name in ("assets", "images"):
-        os.symlink(os.path.join(REPO, name), os.path.join(OUT, name))
+        link = os.path.join(OUT, name)
+        if not os.path.islink(link):
+            os.symlink(os.path.join(REPO, name), link)
     # root-level static files that GitHub Pages serves as-is
     for name in ("favicon.ico", "robots.txt", "sitemap.xml", "CNAME"):
         src = os.path.join(REPO, name)

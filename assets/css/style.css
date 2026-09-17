@@ -1187,8 +1187,16 @@ a.searchbox {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    gap: 10px;
+    gap: 9px;
     margin: 0 0 10px 0;
+}
+
+/* middle dots between the citation parts */
+.pubmeta > * + *::before {
+    content: "·";
+    margin-right: 9px;
+    color: var(--ink-faint);
+    font-weight: 400;
 }
 
 .journal-badge {
@@ -1205,9 +1213,21 @@ a.searchbox {
     font-weight: 700;
 }
 
-.pubjournal {
-    font-size: 0.82rem;
-    font-style: italic;
+.pub-year {
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.pub-cite {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.78rem;
+    color: var(--ink-soft);
+}
+
+.pub-doi {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.74rem;
     color: var(--ink-faint);
 }
 
@@ -1382,13 +1402,13 @@ a.searchbox {
     border-radius: 999px;
 }
 
-.type-database {
+.type-software {
     color: var(--brand-deep);
     background: color-mix(in srgb, var(--brand) 11%, transparent);
     border: 1px solid color-mix(in srgb, var(--brand) 26%, transparent);
 }
 
-.type-software {
+.type-database {
     color: #475569;
     background: rgba(71, 85, 105, 0.08);
     border: 1px solid rgba(71, 85, 105, 0.2);
