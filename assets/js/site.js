@@ -193,6 +193,11 @@
     var filterForm = document.getElementById('filterform');
     var filterList = document.getElementById('filterlist');
     var pubState = { year: null, term: '' };
+    // Keep every searchable part of a publication in one place: adding a
+    // field here (or renaming one in the template) must not be forgotten
+    // in the highlight, reset or year-extraction code below.
+    var PUB_FIELDS = '.pubtitle, .pubauthors, .journal-badge, .pub-year, ' +
+        '.pub-cite, .pub-doi, .pubabstract';
 
     function pubRefresh() {
         if (!filterList) return;
@@ -204,7 +209,7 @@
 
         Array.prototype.forEach.call(items, function (li) {
             var matched = false;
-            Array.prototype.forEach.call(li.querySelectorAll('.pubtitle, .pubauthors, .pubjournal, .pubabstract'),
+            Array.prototype.forEach.call(li.querySelectorAll(PUB_FIELDS),
                 function (el) {
                     var orig = el.dataset.originalHtml;
                     if (orig === undefined) return;
@@ -269,8 +274,7 @@
 
         // remember each field's original HTML so highlighting is reversible
         Array.prototype.forEach.call(filterList.children, function (li) {
-            Array.prototype.forEach.call(
-                li.querySelectorAll('.pubtitle, .pubauthors, .pubjournal, .pubabstract'),
+            Array.prototype.forEach.call(li.querySelectorAll(PUB_FIELDS),
                 function (el) { el.dataset.originalHtml = el.innerHTML; });
         });
 
@@ -308,7 +312,7 @@
     if (pubList && pubList.querySelector('.pubtitle')) {
         var years = {};
         Array.prototype.forEach.call(pubList.children, function (li) {
-            var jEl = li.querySelector('.pubjournal');
+            var jEl = li.querySelector('.pub-year') || li.querySelector('.pubmeta');
             var m = jEl ? jEl.textContent.match(/\b(19|20)\d{2}\b/) : null;
             if (m) {
                 li.setAttribute('data-year', m[0]);
