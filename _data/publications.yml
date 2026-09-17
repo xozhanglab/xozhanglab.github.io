@@ -20,7 +20,7 @@
 
 - title: "PANDORA-seq reveals human sperm sncRNA signature endowed with sperm quality assessment"
   authors: "Huang R*, Yang Y*, Jiang W, Cao Z, Shi J†, <b>Zhang XO</b>†, Zhang Y†"
-  journal: "Genes & Diseases. 2025, 101807. DOI: 10.1016/j.gendis.2025.101807"
+  journal: "Genes & Diseases. 2026, 13:101807. DOI: 10.1016/j.gendis.2025.101807"
   doi: "10.1016/j.gendis.2025.101807"
   hot: true
   abstract: "One of the leading causes of human subfertility is the continuous decline in semen quality, contributing to a global fertility crisis. Over half of subfertile men suffer from asthenozoospermia and teratozoospermia, with mechanisms still largely unknown. Traditional small RNA sequencing (smRNA-seq) primarily targets miRNAs, failing to capture the broader spectrum of small noncoding RNAs (sncRNAs), including abundant transfer RNA-derived small RNAs (tsRNAs) and ribosomal RNA-derived small RNAs (rsRNAs). These sncRNAs possess complex RNA modifications and non-canonical terminal structures, impeding their accurate profiling. In this prospective cohort study, we addressed these limitations by combining our state-of-the-art PANDORA-seq with traditional sncRNA-seq, which firstly generated the most comprehensive sncRNA landscape of human sperm from 25 participants with asthenozoospermia, teratozoospermia, or normozoospermia. PANDORA-seq significantly improved the annotation efficiency of sncRNAs and delivered a more detailed characterization for tsRNAs and rsRNAs, which were strongly correlated with key clinical indicators of sperm quality, thereby enhancing our understanding of the blueprint of human sperm sncRNAome and its association with male subfertility. Importantly, machine learning with Lasso regression identified specific tsRNA/rsRNA signatures as highly effective clinical biomarkers (AUC ≥ 0.83) for predicting sperm abnormalities, offering significant improvements over World Health Organization-based semen quality assessments and novel insights for clinical diagnosis."
@@ -262,7 +262,7 @@
   abstract: "Adenosine deaminases acting on RNA (ADARs) are involved in adenosine-to-inosine RNA editing and are implicated in development and diseases. Here we observed that ADAR1 deficiency in human embryonic stem cells (hESCs) significantly affected hESC differentiation and neural induction with widespread changes in mRNA and miRNA expression, including upregulation of self-renewal-related miRNAs, such as miR302s. Global editing analyses revealed that ADAR1 editing activity contributes little to the altered miRNA/mRNA expression in ADAR1-deficient hESCs upon neural induction. Genome-wide iCLIP studies identified that ADAR1 binds directly to pri-miRNAs to interfere with miRNA processing by acting as an RNA-binding protein. Importantly, aberrant expression of miRNAs and phenotypes observed in ADAR1-depleted hESCs upon neural differentiation could be reversed by an enzymatically inactive ADAR1 mutant, but not by the RNA-binding-null ADAR1 mutant. These findings reveal that ADAR1, but not its editing activity, is critical for hESC differentiation and neural induction by regulating miRNA biogenesis via direct RNA interaction."
 
 - title: "Gene expression profiling of non-polyadenylated RNA-seq across species"
-  autors: "<b>Zhang XO</b>, Yin QF, Chen LL, Yang L†"
+  authors: "<b>Zhang XO</b>, Yin QF, Chen LL, Yang L†"
   journal: "Genomics Data. 2014, 2:237-241. DOI: 10.1016/j.gdata.2014.07.005"
   doi: "10.1016/j.gdata.2014.07.005"
   hot: true

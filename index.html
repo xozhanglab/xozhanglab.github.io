@@ -2,59 +2,75 @@
 layout: default
 ---
 
-<div id="content">
-    <div id="sidebar_container">
-        <div class="sidebar">
-            <h2 style="color: #F14E23">Available positions</h2>
-            <br>
-            <p>Join our team of motivated researchers at the Xiao-Ou Zhang Lab! We're focused on comprehending noncoding
-                sequences,
-                gene regulation, and precision medicine for human diseases. Using computational and data-driven methods,
-                we develop
-                innovative algorithms, statistical tools, and advanced bioinformatics technologies. These tools enable
-                us to analyze
-                diverse sequencing data types, including second and third-generation sequencing and single-cell
-                sequencing, to uncover
-                biomedical insights.</p>
-            <p>If you're interested in being part of our dynamic research environment, send your CV and research
-                interests to <a href="mailto:zhangxiaoou@tongji.edu.cn">
-                    zhangxiaoou@tongji.edu.cn</a>. We're welcoming applications for postdocs, graduate students,
-                research assistants, and undergraduate research interns. Join us in driving groundbreaking discoveries!
-            </p>
+<section class="hero">
+    <div class="dna-layer" aria-hidden="true"></div>
+    <div class="dna-layer dna-layer-2" aria-hidden="true"></div>
+    <div class="dna-layer dna-layer-3" aria-hidden="true"></div>
+    <div class="dna-layer dna-layer-4" aria-hidden="true"></div>
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-spotlight" aria-hidden="true"></div>
+    <div class="hero-inner">
+        <p class="hero-overline" data-reveal>Computational RNA Biology &amp; AI</p>
+        <h1 class="hero-title" data-reveal>Xiao-Ou Zhang Lab</h1>
+        <p class="hero-typed" data-reveal><span id="typed-text"></span><span class="type-caret" aria-hidden="true"></span></p>
+        <p class="hero-sub" data-reveal>We build computational and data-driven methods to decode noncoding
+            sequences &mdash; transposable elements, RNA processing kinetics and noncoding RNAs &mdash; and to
+            understand their roles in gene regulation and disease.</p>
+        <div class="hero-actions" data-reveal>
+            <a class="btn btn-outline" href="/team"><i class="icon-user"></i> Meet the Team</a>
+            <a class="btn btn-outline" href="/publications"><i class="icon-book"></i> Browse Publications</a>
+            <a class="btn btn-join" href="#positions">Join the Lab <span class="arrow">&darr;</span></a>
         </div>
     </div>
-    <div id="main_column">
-        <h1>Welcome!</h1>
-        <p>We are a computational biology group based at the <a target="_blank"
-                href="https://life.tongji.edu.cn/">School of Life Sciences and Technology</a>, <a target="_blank"
-                href="https://www.tongji.edu.cn/">Tongji University</a>. Our primary focus is to unravel the intricate
-            and diverse mechanisms that underlie gene regulation driven by non-coding sequences at the transcriptome
-            level. We specialize in the developing of sophisticated methods tailored for the statistical and integrative
-            analysis of multi-omics high-throughput data. Through these meticulously crafted investigative approachs, we
-            delve into the pivotal role of repetitive sequences, with particular emphasis on transposable elements
-            (TEs), in the control of gene expression. In parallel, We strive to unravel the complexity of
-            transcriptional and post-transcriptional gene expression regulation, along with elucidating the mechanisms
-            governing the biogenesis of non-coding RNAs and their vital biological functions. Our research contributes
-            to advancing the understanding of non-coding sequences and their relevance in human health and disease
-            therapeutics.</p>
-        <div id="slides">
-            <div class="slides_container">
-                {% for study in site.data.research %}
-                <div class="slide" style="overflow-y: auto;">
-                    <h3>{{ study.title }}</h3>
-                    <div style="float: right; display: block; width:190px; overflow:hidden; margin-left:5px;">
-                        <img src="{{ study.img }}" width="185" height="185"
-                            style="background: white; border: 0px solid #888;" />
-                        <div style="clear:both;"></div>
-                    </div>
-                    <p>{{ study.text }}</p>
-                </div>
-                {% endfor %}
-            </div>
-            <a href="#" class="nav prev"><i class="icon-chevron-left "></i></a>
-            <a href="#" class="nav next"><i class="icon-chevron-right "></i></a>
-        </div>
-        <div class="clear"></div>
+</section>
 
+<div id="content" class="page-content">
+    <h2 class="section-header" data-reveal>Welcome!</h2>
+    <p class="lead" data-reveal>We are a computational biology group in the <a target="_blank" rel="noopener"
+            href="https://life.tongji.edu.cn/">School of Life Sciences and Technology</a> at <a target="_blank" rel="noopener"
+            href="https://www.tongji.edu.cn/">Tongji University</a>. Our goal is to understand the diverse
+        mechanisms by which noncoding sequences regulate gene expression at the transcriptome level. We specialize
+        in developing statistical and integrative methods for the analysis of multi-omics high-throughput data, and
+        we apply them to study the role of repetitive sequences &mdash; particularly transposable elements (TEs)
+        &mdash; in the control of gene expression. In parallel, we investigate transcriptional and
+        post-transcriptional regulation, and the mechanisms governing the biogenesis and biological functions of
+        noncoding RNAs. Our work advances the understanding of noncoding sequences and their relevance to human
+        health and disease.</p>
+
+    <h2 class="section-header" data-reveal>Research Directions</h2>
+    <div class="card-grid research-grid">
+        {% for study in site.data.research %}
+        <article class="research-card" data-reveal data-tilt>
+            <div class="research-figure">
+                <img src="{{ study.img }}" alt="{{ study.title }}" />
+            </div>
+            <div class="research-body">
+                <h3>{{ study.title }}</h3>
+                <p class="research-text">{{ study.text }}</p>
+                <button class="read-more" type="button">Read more <span class="arrow">&darr;</span></button>
+            </div>
+        </article>
+        {% endfor %}
     </div>
+
+    <section class="positions-cta" id="positions" data-reveal>
+        <div class="positions-cta-text">
+            <h2><span class="pulse-dot"></span> Available positions</h2>
+            <p>We are looking for motivated researchers to join the Xiao-Ou Zhang Lab. Our work spans noncoding
+                sequences, gene regulation and precision medicine for human disease. Using computational and
+                data-driven approaches, we develop algorithms, statistical tools and bioinformatics pipelines that
+                make sense of diverse sequencing data, from second- and third-generation sequencing to single-cell
+                assays.</p>
+            <p>If you would like to be part of our research environment, send your CV and a short statement of
+                research interests to <a href="mailto:zhangxiaoou@tongji.edu.cn">zhangxiaoou@tongji.edu.cn</a>. We
+                welcome applications from postdocs, graduate students, research assistants and undergraduate
+                interns.</p>
+        </div>
+        <div class="positions-cta-action">
+            <a class="btn btn-join" href="mailto:zhangxiaoou@tongji.edu.cn">Apply now <span
+                    class="arrow">&rarr;</span></a>
+            <span class="positions-note">Postdocs &middot; PhD &middot; RA &middot; Interns</span>
+        </div>
+    </section>
 </div>

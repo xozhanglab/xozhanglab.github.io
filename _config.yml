@@ -20,4 +20,9 @@
 
 title: Xiao-Ou Zhang Lab
 description: Computational Biology Lab of Xiao-Ou Zhang
-gems: [github-pages]
+plugins: [github-pages]
+
+
+exclude:
+  - tools
+  - preview

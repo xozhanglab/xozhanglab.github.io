@@ -1,8 +1,63 @@
 - name: APApedia database
+  type: Database
+  group: current
   img: /images/softwares/APApedia.jpg
   website: http://xozhanglab.com/apapedia
-  description: APApedia is a comprehensive database dedicated to unraveling the dynamics of alternative cleavage and polyadenylation (APA) during developmental processes. It provides an extensive collection of APA events in humans and mice, encompassing a wide range of developmental contexts. <a href="https://pubmed.ncbi.nlm.nih.gov/40126195">(Wang et al., Advanced Science, 2025)</a>
+  description: |
+    APApedia is a comprehensive database of alternative cleavage and polyadenylation (APA) events in
+    development. It catalogs APA events across a wide range of developmental contexts in human and
+    mouse. <a href="https://pubmed.ncbi.nlm.nih.gov/40126195">(Wang et al., Advanced Science,
+    2025)</a>
+
 - name: TE-TSS database
+  type: Database
+  group: current
   img: /images/softwares/TETSS.jpg
   website: http://xozhanglab.com/TETSS
-  description: TE-TSS is a database for transposon (TE)-derived transcription start sites (TSSs). It provides a comprehensive collection of TE-derived TSSs in humans and mice, and enables users to search, browse, and download TETSSs and their usage across different biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et al., Nucleic Acids Research, 2023)</a>
+  description: |
+    TE-TSS is a database of transposon (TE)-derived transcription start sites (TSSs). It collects
+    TE-derived TSSs in human and mouse, and lets users search, browse and download them together
+    with their usage across biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et
+    al., Nucleic Acids Research, 2023)</a>
+
+- name: RAMPAGE analysis toolkit
+  type: Software
+  group: current
+  img: /images/softwares/RAMPAGE.jpg
+  website: https://github.com/kepbod/rampage_alu
+  description: |
+    The RAMPAGE analysis toolkit is a standardized pipeline for quality control, data cleaning, peak
+    calling and peak annotation of RAMPAGE data. We used it to identify Pol III-transcribed Alu
+    elements <a href="http://www.ncbi.nlm.nih.gov/pubmed/31413151">(Zhang et al., Genome Research, 2019)</a>, alternative TSSs <a href="http://www.ncbi.nlm.nih.gov/pubmed/34949670">(Moore et al., Genome Research, 2022)</a>, expressed snRNA variants <a href="http://www.ncbi.nlm.nih.gov/pubmed/42697701">(Zhang et al., Genome Research, 2026)</a> and transposon-derived TSSs <a href="http://www.ncbi.nlm.nih.gov/pubmed/41620470">(Zhang et al., Nature Communications, 2026)</a>.
+
+- name: CIRCpseudo
+  type: Software
+  group: earlier
+  img: /images/softwares/CIRCpseudo.jpg
+  website: https://github.com/YangLab/CIRCpseudo
+  description: |
+    CIRCpseudo maps back-splicing junction sequences to identify pseudogenes derived from circular
+    RNAs, revealing how circRNAs can be written back into the genome. <a
+    href="http://www.ncbi.nlm.nih.gov/pubmed/27021280">(Dong et al., Cell Research, 2016)</a>
+
+- name: CIRCexplorer/CIRCexplorer2
+  type: Software
+  group: earlier
+  img: /images/softwares/CIRCexplorer.jpg
+  website: https://circexplorer2.readthedocs.io/en/latest/
+  description: |
+    CIRCexplorer is a comprehensive toolkit for circRNA analysis. It supports multiple aligners for
+    circular RNA reads, enables de novo assembly of novel circRNA transcripts, and facilitates the
+    characterization of alternative (back-)splicing events. <a
+    href="http://www.ncbi.nlm.nih.gov/pubmed/25242744">(Zhang et al., Cell, 2014)</a> <a
+    href="http://www.ncbi.nlm.nih.gov/pubmed/27365365">(Zhang et al., Genome Research, 2016)</a>
+
+- name: CIRCfinder
+  type: Software
+  group: earlier
+  img: /images/softwares/CIRCfinder.jpg
+  website: https://github.com/YangLab/CIRCfinder
+  description: |
+    CIRCfinder maps junction reads to identify circular intronic RNAs (ciRNAs) and to pinpoint their
+    exact boundaries. <a href="http://www.ncbi.nlm.nih.gov/pubmed/24035497">(Zhang et al., Molecular
+    Cell, 2013)</a>

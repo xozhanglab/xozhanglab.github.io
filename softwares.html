@@ -2,34 +2,44 @@
 layout: default
 ---
 
-<div id="content">
-    <div id="software">
-        <ul id="filterlist">
+<div id="content" class="page-content">
+    <h2 class="section-header" data-reveal>Softwares &amp; Databases</h2>
+    <p class="page-intro" data-reveal>Please see the Xiao-Ou Zhang Lab's <a href="https://github.com/xozhanglab"
+            target="_blank" rel="noopener">GitHub page</a> for our latest software packages.</p>
 
-            <h2>Please see the Xiao-Ou Zhang Lab's <a href="https://github.com/xozhanglab" target="_blank">GitHub
-                    page</a> for our latest software packages.</h2>
-
-            {% for software in site.data.softwares %}
-            <li>
-                <a href="{{ software.website }}" target="_blank"><img src="{{ software.img }}" class="software-image"
-                        width="182" height="182" style="background-color:white" /></a>
-                <h3>{{ software.name }}</h3>
-                <p>{{ software.description }}</p>
-            </li>
-            {% endfor %}
-
-            <h2>- developed during the PI's Ph.D. or postdoctoral fellowship and shortly thereafter:</h2>
-
-            {% for software in site.data.before_softwares %}
-            <li>
-                <a href="{{ software.website }}" target="_blank"><img src="{{ software.img }}" class="software-image"
-                        width="182" height="182" style="background-color:white" /></a>
-                <h3>{{ software.name }}</h3>
-                <p>{{ software.description }}</p>
-            </li>
-            {% endfor %}
-
-        </ul>
+    <div class="card-grid software-grid software-grid-wide">
+        {% assign items = site.data.softwares | where: "group", "current" %}
+        {% for item in items %}
+        <article class="software-card" data-reveal data-tilt>
+            <div class="software-figure">
+                <img src="{{ item.img }}" alt="{{ item.name }}" />
+            </div>
+            <h3>{{ item.name }}
+                <a class="software-link" href="{{ item.website }}" target="_blank" rel="noopener"
+                    aria-label="Open {{ item.name }}"><span class="arrow">&rarr;</span></a>
+            </h3>
+            {% if item.type %}<span class="type-badge type-{{ item.type | downcase }}">{{ item.type }}</span>{% endif %}
+            <p>{{ item.description }}</p>
+        </article>
+        {% endfor %}
     </div>
 
+    <p class="page-intro group-note" data-reveal>Developed during the PI's Ph.D. and postdoctoral fellowship.</p>
+
+    <div class="card-grid software-grid">
+        {% assign items = site.data.softwares | where: "group", "earlier" %}
+        {% for item in items %}
+        <article class="software-card" data-reveal data-tilt>
+            <div class="software-figure">
+                <img src="{{ item.img }}" alt="{{ item.name }}" />
+            </div>
+            <h3>{{ item.name }}
+                <a class="software-link" href="{{ item.website }}" target="_blank" rel="noopener"
+                    aria-label="Open {{ item.name }}"><span class="arrow">&rarr;</span></a>
+            </h3>
+            {% if item.type %}<span class="type-badge type-{{ item.type | downcase }}">{{ item.type }}</span>{% endif %}
+            <p>{{ item.description }}</p>
+        </article>
+        {% endfor %}
+    </div>
 </div>

@@ -2,36 +2,50 @@
 layout: default
 ---
 
-<div id="content">
-    <h2>Please see Xiao-Ou Zhang's <a href="https://scholar.google.com/citations?user=KpX6MewAAAAJ"
-            target="_blank">Google Scholar</a> for the full list of publications.</h2>
-    <div class="searchbox">
-        <div id="filterform"></div>
-        <div class="clear"></div>
+<div id="content" class="page-content">
+    <h2 class="section-header" data-reveal>Publications</h2>
+    <p class="page-intro" data-reveal>Please see Xiao-Ou Zhang's <a
+            href="https://scholar.google.com/citations?user=KpX6MewAAAAJ" target="_blank" rel="noopener">Google Scholar</a> for the
+        full list of publications.</p>
+
+    <div class="pub-toolbar" data-reveal>
+        <div class="searchbox">
+            <div id="filterform"></div>
+            <div class="clear"></div>
+        </div>
+        <div id="year-chips" class="year-chips"></div>
+        <span class="filter-count"></span>
     </div>
-    <div>
-        <ul id="filterlist">
-            {% for paper in site.data.publications %}
-            <li {% if paper.hot %}class="hot" {% endif %}>
-                <div class="publication">
-                    <div>
-                        <div class="pubtitle">{{ paper.title }}</div>
-                        <div class="pubauthors">{{ paper.authors }}</div>
-                        <div class="pubjournal">{{ paper.journal }}</div>
-                        <div class="publinks"> <a target="_blank"
-                                href="https://doi.org/{{ paper.doi }}">[Link]</a> </div>
+
+    <ul id="filterlist">
+        {% for paper in site.data.publications %}
+        <li {% if paper.hot %}class="hot" {% endif %}>
+            <div class="publication">
+                <div>
+                    <div class="pubtitle">{{ paper.title }}{% if paper.hot %} <span class="hot-badge">&#9733;
+                            Highlight</span>{% endif %}</div>
+                    <div class="pubauthors">{{ paper.authors }}</div>
+                    {% assign journal_name = paper.journal | split: ". " | first %}
+                    <div class="pubmeta">
+                        <span class="journal-badge">{{ journal_name }}</span>
+                        <span class="pubjournal">{{ paper.journal | remove_first: journal_name | remove_first: ". " }}</span>
                     </div>
-                    <div>
-                        <span class="__dimensions_badge_embed__" data-doi="{{ paper.doi }}"
-                            data-style="small_circle"></span>
-                        <script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+                    <div class="publinks">
+                        <a class="doi-link" target="_blank" rel="noopener" href="https://doi.org/{{ paper.doi }}">Read paper <i
+                                class="icon-external-link"></i></a>
                     </div>
                 </div>
-                {% if paper.abstract %}
-                <div class="pubabstract"><strong>Abstract</strong>: {{ paper.abstract }}</div>
-                {% endif %}
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
+                <div class="pub-badge-col">
+                    <span class="__dimensions_badge_embed__" data-doi="{{ paper.doi }}"
+                        data-style="small_circle"></span>
+                </div>
+            </div>
+            {% if paper.abstract %}
+            <div class="pubabstract"><strong>Abstract</strong>: {{ paper.abstract }}</div>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
 </div>
+
+<script async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>

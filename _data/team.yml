@@ -1,55 +1,95 @@
-- id: 1
-  name: Zhongren Hu
+- name: Zhongren Hu
+  role: PhD Student
   pic: /images/team/huzhongren.jpg
   email: 2011399@tongji.edu.cn
-  bio: Zhongren earned a B.S. in Bioinformatics from Tongji University in 2020 and joined Prof. Xiao-Ou Zhang's lab as a doctoral student in the same year. His research focuses on developing computational methods for detecting transposition events based on long-read sequencing.
-- id: 2
-  name: Bo Xu
+  bio: |
+    Zhongren earned his B.S. in Bioinformatics from Tongji University in 2020 and joined Professor
+    Zhang's lab as a doctoral student the same year. His research focuses on developing
+    computational methods to detect transposition events from long-read sequencing data.
+- name: Bo Xu
+  role: PhD Candidate
   pic: /images/team/xubo.jpg
   email: 1194189468@qq.com
-  bio: 2016-2020 | Bachelor of Bioinformatics, Tongji University, 2020-present | PhD candidate of Biology, expected 2026, Tongji University. He is focused on profiling transposon insertion in human and fly, and studying the piRNA cluster conservation in mammal's evolution. The final aim is answering how piRNA clusters function in silencing transposon insertion and regulating gene expression.
-- id: 3
-  name: Hanxi Shi
+  bio: |
+    Bo received his B.S. in Bioinformatics from Tongji University in 2020 and is now a Ph.D.
+    candidate in Biology there, expected to graduate in 2026. He profiles transposon insertions in
+    both human and fly, and studies the conservation of piRNA clusters over mammalian evolution.
+    Ultimately, he aims to understand how piRNA clusters silence transposon insertions and regulate
+    gene expression.
+- name: Hanxi Shi
+  role: PhD Student
   pic: /images/team/shihanxi.jpg
   email: 2111266@tongji.edu.cn
-  bio: Hanxi earned her B.S. in Biology from Tongji University in 2021 and subsequently joined Professor Zhang’s lab to pursue her Ph.D. studies. Her research primarily focuses on investigating the intricate mechanisms underlying the involvement of transposable elements (TEs) in the regulation of gene expression.
-- id: 4
-  name: Ruofan Huang
+  bio: |
+    Hanxi earned her B.S. in Biology from Tongji University in 2021 and joined Professor Zhang's lab
+    to pursue her Ph.D. Her research focuses on the mechanisms by which transposable elements (TEs)
+    contribute to the regulation of gene expression.
+- name: Ruofan Huang
+  role: PhD Student
   pic: /images/team/huangruofan.jpg
   email: ruofanhuang@tongji.edu.cn
-  bio: Ruofan obtained a B.E. in Biological Engineering from Beijing University of Chemical and Technology in 2021. She then embarked on her Ph.D. journey under the guidance of Professor Zhang at Tongji University. During her Ph.D. period, she primarily focuses on studying the biogenesis, processing mechanisms, and gene regulation of small noncoding RNAs. Her research, in particular, contributes to advancing the understanding of non-coding sequences and their relevance in human health and disease therapeutics.
-- id: 5
-  name: Lingfeng Xu
+  bio: |
+    Ruofan received her B.E. in Biological Engineering from Beijing University of Chemical
+    Technology in 2021 and began her Ph.D. with Professor Zhang at Tongji University the same year.
+    She studies the biogenesis, processing and gene regulation of small noncoding RNAs, with a
+    particular interest in how noncoding sequences contribute to human health and disease.
+- name: Lingfeng Xu
+  role: PhD Student
   pic: /images/team/xulingfeng.jpg
   email: 2311465@tongji.edu.cn
-  bio: I studied bioinformatics as an undergraduate in Tongji University, and once made a superficial study on circular RNA. Now I am studying as a postgraduate in Professor Xiao-Ou Zhang 's lab, and I am trying to work on single-cell sequencing data. I am very interested in biology and machine learning, and you are welcome to communicate with me.
-- id: 6
-  name: Mengyao Cui
+  bio: |
+    I studied bioinformatics as an undergraduate at Tongji University, where I carried out a
+    preliminary study of circular RNAs. I am now a graduate student in Professor Xiao-Ou Zhang's
+    lab, working with single-cell sequencing data. I am deeply interested in biology and machine
+    learning, and I am always happy to discuss ideas.
+- name: Mengyao Cui
+  role: PhD Student
   pic: /images/team/cuimengyao.jpg
   email: 2311459@tongji.edu.cn
-  bio: Mengyao Cui received her B.S. in Applied Statistics from Northeastern University in 2023 and then joined Prof. Zhang's lab for her PhD. She is trying to engage in research that combines knowledge of mathematics and biology, and hopes to achieve some results.
-- id: 7
-  name: Jing Yan
+  bio: |
+    Mengyao received her B.S. in Applied Statistics from Northeastern University in 2023 and joined
+    Professor Zhang's lab for her Ph.D. She is drawn to research that brings mathematics and biology
+    together, and hopes to make a meaningful contribution in that space.
+- name: Jing Yan
+  role: PhD Student
   pic: /images/team/yanjing.jpg
   email: 2333161@tongji.edu.cn
-  bio: Jing Yan graduated from Huazhong Agricultural University in 2023 with a Bachelor's degree in Bioinformatics and subsequently joined Professor Zhang's laboratory to pursue a Master's degree. She is committed to exploring uncharted territories within biology and seeking innovative approaches to problem-solving. Continuously enhancing her research capabilities, she strives to achieve her scientific goals and professional ambitions.
-- id: 8
-  name: Siyu Xu
-  pic: /images/team/xusiyu.jpg
-  email: syxu0912@tongji.edu.cn
-  bio: Siyu Xu graduated with a B.S. in Bioinformatics from Soochow University in 2024 and is currently pursuing her Master's degree in Biology under the mentorship of Prof. Xiao-Ou Zhang at Tongji University. Her research focuses on using scRNA-seq data to identify transcription start sites (TSS) and explore their role in cellular phenotypes and regulatory patterns. She hopes to gain a deeper understanding of the mechanisms of transcriptional regulation and provide new perspectives and methods for research on related diseases.
-- id: 9 
-  name: Yubo Liu
+  bio: |
+    Jing graduated from Huazhong Agricultural University in 2023 with a B.S. in Bioinformatics and
+    joined Professor Zhang's lab to pursue a Ph.D. degree. She is drawn to unexplored questions
+    in biology and to developing innovative approaches to difficult problems, and she continues to
+    broaden her research skills in pursuit of her scientific goals.
+- name: Yubo Liu
+  role: PhD Student
   pic: /images/team/liuyubo.jpg
   email: 2433326@tongji.edu.cn
-  bio: Yubo Liu graduated from Tongji University in 2024 with a bachelor's degree in bioinformatics and subsequently joined Prof. Xiao-Ou Zhang's research team. My work primarily focuses on the quantification and algorithm development of transposons at the single-cell level. Welcome everyone to communicate with me and exchange ideas.
-- id: 10 
-  name: Junru Wang 
+  bio: |
+    I graduated from Tongji University in 2024 with a B.S. in Bioinformatics and then joined
+    Professor Xiao-Ou Zhang's team. My work focuses on quantifying transposons at the single-cell
+    level and on developing algorithms for that purpose. I am always glad to exchange ideas.
+- name: Siyu Xu
+  role: Master's Student
+  pic: /images/team/xusiyu.jpg
+  email: syxu0912@tongji.edu.cn
+  bio: |
+    Siyu received her B.S. in Bioinformatics from Soochow University in 2024 and is pursuing her
+    Master's degree in Biology with Professor Xiao-Ou Zhang at Tongji University. She uses scRNA-seq
+    data to identify transcription start sites (TSSs) and to explore their role in cellular
+    phenotypes and regulatory programs. She hopes to deepen our understanding of transcriptional
+    regulation and to open new approaches to related diseases.
+- name: Junru Wang
+  role: PhD Student
   pic: /images/team/wangjunru.jpg
   email: 2511592@tongji.edu.cn
-  bio: Junru Wang earned her Bachelor of Science degree in Bioinformatics from Tongji University in 2025 and subsequently joined Xiao-Ou Zhang’s Lab to pursue her Ph.D. Her current research focuses primarily on circular RNAs and single-cell sequencing, and she aims to address practical biological problems through algorithm development and data analysis.
-- id: 11 
-  name: Yue Shi 
+  bio: |
+    Junru earned her B.S. in Bioinformatics from Tongji University in 2025 and joined the lab to
+    pursue her Ph.D. Her research centers on circular RNAs and single-cell sequencing, and she aims
+    to address practical biological questions through algorithm development and data analysis.
+- name: Yue Shi
+  role: Master's Student
   pic: /images/team/shiyue.jpg
   email: 2533126@tongji.edu.cn
-  bio: Yue Shi graduated from Harbin Medical University in 2025 with a B.S. in Bioinformatics and is now working toward a Master's degree in Biology in the team of Prof. Xiao-Ou Zhang at Tongji University. His current work is dedicated to transcription start sites (TSS) and investigating their impact.
+  bio: |
+    Yue received his B.S. in Bioinformatics from Harbin Medical University in 2025 and is now
+    pursuing a Master's degree in Biology with Professor Xiao-Ou Zhang at Tongji University. His
+    current work focuses on transcription start sites (TSSs) and their regulatory impact.

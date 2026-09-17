@@ -1,32 +1,21 @@
 <!DOCTYPE HTML>
-<html>
+<html lang="en">
 {% include head.html %}
 
 <body>
     <div id="particles-js"></div>
-    <div id="main">
-        {% include nav.html %}
+    <div id="progress" aria-hidden="true"></div>
+    {% include nav.html %}
+    <main id="main">
         {{ content }}
-        {% include footer.html %}
-    </div>
+    </main>
+    {% include footer.html %}
+    <button id="to-top" type="button" aria-label="Back to top"><i class="icon-chevron-up"></i></button>
     <!-- Scripts are placed at the end of <body> so they do not block
          the browser from rendering the page content above. -->
-    <script src="assets/js/jquery.js"></script>
-    <script src="assets/js/slides.js"></script>
-    <script src="assets/js/minor.js"></script>
-    <script>
-        $(function () {
-            $("#slides").slides({
-                play: 20000,
-                pause: 40000,
-                hoverPause: true,
-                fadeSpeed: 10,
-                generatePagination: true
-            });
-        });
-    </script>
     <script src="assets/js/particles.js"></script>
     <script src="assets/js/app.js"></script>
+    <script src="assets/js/site.js"></script>
 </body>
 
 </html>

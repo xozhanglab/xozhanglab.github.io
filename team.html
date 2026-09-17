@@ -2,77 +2,64 @@
 layout: default
 ---
 
-<div id="content">
-    <div>
-        <h2 class="section-header">Current Members</h2>
-        <ul id="portraits">
-            <li>
-                <div class="photo pic1">
-                    <img src="images/team/xiaoou.jpg" alt="Xiao-Ou Zhang" />
-                </div>
-                <div class="info">
-                    <h3>Xiao-Ou Zhang (PI)</h3>
-                    <p>
-                        <i class="icon-envelope"></i>
-                        <a href="mailto:zhangxiaoou@tongji.edu.cn"><u>zhangxiaoou@tongji.edu.cn</u></a>
-                        <br>
-                        <i class="icon-home"></i>
-                        <a target="_blank" href="https://kepbod.com"><u>kepbod.com</u></a>
-                        <br>
-                        <i class="icon-github-sign"></i>
-                        <a target="_blank" href="https://github.com/kepbod"><u>@kepbod</u></a>
-                        <br>
-                        <i class="icon-map-marker"></i>
-                        <u>1239 Siping Road, Shanghai 200092</u>
-                    </p>
-                    Xiao-Ou earned a B.E. in Biological Engineering from Huazhong Agricultural University and a B.S. in
-                    Computer Science from Huazhong University of Science and Technology in 2011. He then received his
-                    Ph.D. in Computational Biology from the CAS-MPG Partner Institute (PICB), Shanghai Institutes for
-                    Biological Sciences (SIBS), Chinese Academy of Sciences (CAS) for Computational Biology in 2016.
-                    During his Ph.D. period, he primarily focused on studying the biogenesis and processing mechanisms
-                    of long noncoding RNAs with unique structures under the advisement of <a target="_blank"
-                        href="https://yanglab.github.io/">Prof. Li Yang</a> and <a target="_blank"
-                        href="http://chenlab-rna.sibcb.ac.cn/">Prof. Ling-Ling Chen</a>. He joined the lab of <a
-                        target="_blank" href="https://www.umassmed.edu/zlab/">Prof. Zhiping Weng</a> at UMass Chan
-                    Medical School as a postdoctoral fellow in 2016, where he developed computational methods to study
-                    the functions of repetitive sequences in gene regulation. In 2020, he joined the School of Life
-                    Sciences and Technology at Tongji University as a professor and a group leader. His research focuses
-                    on developing computational algorithms and conducting big data mining on high-throughput data to
-                    investigate gene regulation driven by noncoding sequences. </p>
-                </div>
-            </li>
+<div id="content" class="page-content">
+    <h2 class="section-header" data-reveal>Principal Investigator</h2>
+    <article class="pi-card" data-reveal>
+        <div class="pi-photo">
+            <img src="images/team/xiaoou.jpg" alt="Xiao-Ou Zhang" />
+        </div>
+        <div class="pi-info">
+            <h3>Xiao-Ou Zhang <span class="role-badge">PI</span></h3>
+            <p class="member-links">
+                <a href="mailto:zhangxiaoou@tongji.edu.cn"><i class="icon-envelope"></i> zhangxiaoou@tongji.edu.cn</a>
+                <a target="_blank" rel="noopener" href="https://kepbod.com"><i class="icon-home"></i> kepbod.com</a>
+                <a target="_blank" rel="noopener" href="https://github.com/kepbod"><i class="icon-github-sign"></i> @kepbod</a>
+                <span><i class="icon-map-marker"></i> 1239 Siping Road, Shanghai 200092</span>
+            </p>
+            <p class="member-bio">
+                Xiao-Ou earned a B.E. in Biological Engineering from Huazhong Agricultural University and a B.S.
+                in Computer Science from Huazhong University of Science and Technology in 2011. He received his
+                Ph.D. in Computational Biology in 2016 from the CAS-MPG Partner Institute for Computational
+                Biology (PICB), Shanghai Institutes for Biological Sciences (SIBS), Chinese Academy of Sciences.
+                During his doctoral studies he focused on the biogenesis and processing of long noncoding RNAs
+                with distinctive structures, working with <a target="_blank" rel="noopener" href="https://yanglab.github.io/">Prof.
+                    Li Yang</a> and <a target="_blank" rel="noopener" href="http://chenlab-rna.sibcb.ac.cn/">Prof. Ling-Ling
+                    Chen</a>. In 2016 he moved to UMass Chan Medical School as a postdoctoral fellow in the lab of <a
+                    target="_blank" rel="noopener" href="https://www.umassmed.edu/zlab/">Prof. Zhiping Weng</a>, where he developed
+                computational methods to study how repetitive sequences function in gene regulation. He joined the
+                School of Life Sciences and Technology at Tongji University in 2020 as a professor and group leader.
+                His research focuses on developing computational algorithms and mining large-scale high-throughput
+                data to investigate gene regulation driven by noncoding sequences.</p>
+        </div>
+    </article>
 
-            {% for member in site.data.team %}
-            <li>
-                <div class="photo pic{{ member.id | modulo: 4 | plus: 1}}">
-                    <img src="{{ member.pic }}" alt="{{ member.name }}" />
-                </div>
-                <div class="info">
-                    <h3>{{ member.name }}</h3>
-                    <p>
-                        e-mail: <a href="mailto:{{ member.email }}"><u>{{ member.email }}</u></a>
-                    </p>
-                    <p>
-                        {{ member.bio }}
-                    </p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
-        <br><br>
-        <h2 class="section-header alumni-header" onclick="toggleAlumni()">Alumni <span id="alumni-toggle-symbol"><i class="icon-chevron-down"></i></span></h2>
-        <table id="alumni-table" style="display: none;">
-            <tbody>
-                {% for alumni in site.data.alumni %}
-                <tr>
-                    <td class="alumni-name">{{ alumni.name }}</td>
-                    <td class="alumni-info">{{ alumni.info }}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
-        
+    <h2 class="section-header" data-reveal>Team Members</h2>
+    <div class="card-grid team-grid">
+        {% for member in site.data.team %}
+        <article class="member-card" data-reveal data-tilt>
+            <div class="avatar">
+                <img src="{{ member.pic }}" alt="{{ member.name }}" />
+            </div>
+            <h3>{{ member.name }}</h3>
+            {% if member.role %}<span class="role-badge">{{ member.role }}</span>{% endif %}
+            <a class="member-email" href="mailto:{{ member.email }}"><i class="icon-envelope"></i> {{ member.email }}</a>
+            <div class="member-bio">{{ member.bio | markdownify }}</div>
+        </article>
+        {% endfor %}
     </div>
+
+    <h2 class="section-header alumni-header" onclick="toggleAlumni()" data-reveal>Alumni <span
+            id="alumni-toggle-symbol"><i class="icon-chevron-down"></i></span></h2>
+    <table id="alumni-table" style="display: none;">
+        <tbody>
+            {% for alumni in site.data.alumni %}
+            <tr>
+                <td class="alumni-name">{{ alumni.name }}</td>
+                <td class="alumni-info">{{ alumni.info }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 </div>
 
 <script>
