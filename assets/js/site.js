@@ -235,9 +235,22 @@
             li.style.display = show ? '' : 'none';
             if (show) hits++;
 
-            var abs = li.querySelector('.pubabstract');
-            if (abs) abs.style.display = (term && matched && show) ? 'block' : 'none';
+            // <details> owns the disclosure; reveal matches, never force-close
+            // a panel the reader opened themselves
+            var d = li.querySelector('.pub-abstract');
+            if (d && term && matched && show) d.open = true;
         });
+
+        var emptyEl = document.getElementById('pub-empty');
+        if (emptyEl) {
+            emptyEl.hidden = hits !== 0 || (!term && !pubState.year);
+            if (!emptyEl.hidden) {
+                emptyEl.textContent = 'No papers match' +
+                    (term ? ' "' + term + '"' : '') +
+                    (pubState.year ? ' in ' + pubState.year : '') +
+                    '. Try a shorter keyword, or clear the year filter.';
+            }
+        }
 
         var countEl = document.querySelector('.filter-count');
         if (countEl) {
@@ -301,15 +314,7 @@
             pubRefresh();
         });
 
-        // clicking a paper toggles its abstract
-        Array.prototype.forEach.call(filterList.children, function (li) {
-            li.addEventListener('click', function (e) {
-                if (e.target.closest('a')) return;   // let links work normally
-                var abs = li.querySelector('.pubabstract');
-                if (!abs || !abs.textContent.trim()) return;
-                abs.style.display = (getComputedStyle(abs).display === 'none') ? 'block' : 'none';
-            });
-        });
+
     }
 
     /* ---- Publications: year filter chips ---- */

@@ -1,7 +1,8 @@
 /* ==========================================================================
-   Xiao-Ou Zhang Lab — dark tech theme
-   Fonts: Sora (display) / Inter (body) / JetBrains Mono (accents)
-   Palette: near-black canvas + cyan/lime accent
+   Xiao-Ou Zhang Lab
+   Fonts: Sora (display) / Inter (body) / JetBrains Mono (codes)
+   Palette: light canvas with an indigo-to-cyan accent family; every value
+   below is a token on :root so the whole site can be retinted in one place.
    ========================================================================== */
 
 :root {
@@ -16,7 +17,6 @@
     --brand: #0b9fd0;
     --brand-2: #38bdf8;
     --brand-deep: #0c6e91;
-    --indigo: #0c6e91;
     --grad-brand: linear-gradient(135deg, #0891b2, #38bdf8);
     --grad-ink: linear-gradient(160deg, #e3f4fc 0%, #f1fafe 45%, #ffffff 100%);
     --shadow-sm: 0 1px 2px rgba(15, 42, 38, 0.05), 0 2px 8px -4px rgba(15, 42, 38, 0.08);
@@ -283,19 +283,6 @@ ul#menu li.current a {
     transform: translateX(4px);
 }
 
-.btn-primary {
-    background: var(--grad-brand);
-    color: #052e2b;
-    box-shadow: 0 10px 26px -10px color-mix(in srgb, var(--brand) 75%, transparent);
-}
-
-.btn-primary:hover {
-    color: #052e2b;
-    transform: translateY(-2px);
-    box-shadow: 0 18px 36px -10px color-mix(in srgb, var(--brand) 85%, transparent);
-    text-decoration: none;
-}
-
 .btn-ghost,
 .btn-outline {
     background: rgba(255, 255, 255, 0.7);
@@ -324,11 +311,6 @@ ul#menu li.current a {
     color: var(--brand-deep);
     text-decoration: none;
     transform: translateY(-2px);
-}
-
-.btn-sm {
-    padding: 9px 18px;
-    font-size: 0.88rem;
 }
 
 /* --------------------------------------------------------------------------
@@ -600,10 +582,6 @@ ul#menu li.current a {
     color: var(--ink-faint);
 }
 
-#main_column {
-    min-width: 0;
-}
-
 .section-header {
     font-size: clamp(1.5rem, 2.8vw, 2.05rem);
     margin: 14px 0 18px 0;
@@ -625,8 +603,17 @@ ul#menu li.current a {
     font-size: 1.02rem;
     line-height: 1.85;
     color: var(--ink-soft);
-    max-width: none;
     padding-bottom: 28px;
+    /* keeps the full-width span the page asks for, but reads as two
+       ~70-character columns instead of one 138-character line */
+    columns: 2;
+    column-gap: 52px;
+}
+
+@media (max-width: 860px) {
+    .lead {
+        columns: 1;
+    }
 }
 
 .page-intro {
@@ -1089,6 +1076,16 @@ a.searchbox {
     color: var(--brand-deep);
 }
 
+.pub-empty {
+    margin: 0 0 18px 0;
+    padding: 18px 22px;
+    border: 1px dashed color-mix(in srgb, var(--ink) 18%, transparent);
+    border-radius: var(--radius);
+    background: color-mix(in srgb, var(--ink) 2%, transparent);
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+}
+
 #filterlist {
     list-style: none;
     margin: 0;
@@ -1267,9 +1264,62 @@ a.searchbox {
     opacity: 1;
 }
 
-.pubabstract {
+.pub-abstract {
+    margin-top: 12px;
+}
+
+.pub-abstract summary {
+    /* `display: list-item` is load-bearing: overriding it (e.g. with flex)
+       strips the native disclosure behaviour, and the keyboard stops
+       toggling the panel. The marker is hidden via ::marker instead. */
+    display: list-item;
+    list-style: none;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--brand-deep);
+    cursor: pointer;
+    user-select: none;
+    width: fit-content;
+}
+
+.pub-abstract summary::-webkit-details-marker {
     display: none;
-    margin-top: 14px;
+}
+
+.pub-abstract summary::marker {
+    content: "";
+}
+
+.pub-abstract summary::before {
+    content: "";
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-right: 8px;
+    vertical-align: 1px;
+    border-left: 5px solid currentColor;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    transition: transform 0.2s ease;
+}
+
+.pub-abstract[open] summary::before {
+    transform: rotate(90deg);
+}
+
+.pub-abstract summary:hover {
+    color: var(--brand);
+}
+
+.pub-abstract summary:focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 3px;
+    border-radius: 4px;
+}
+
+/* the <details> element owns visibility now, so no display: none here */
+.pubabstract {
+    margin-top: 12px;
     padding: 12px 18px;
     background: color-mix(in srgb, var(--brand) 6%, transparent);
     border-left: 3px solid color-mix(in srgb, var(--brand) 50%, transparent);
@@ -1808,143 +1858,12 @@ a [class*=" icon-"] {
     font-size: 1.3333333333333333em;
 }
 
-.icon-glass:before { content: "\f000"; }
-.icon-music:before { content: "\f001"; }
-.icon-search:before { content: "\f002"; }
 .icon-envelope:before { content: "\f003"; }
-.icon-heart:before { content: "\f004"; }
-.icon-star:before { content: "\f005"; }
-.icon-star-empty:before { content: "\f006"; }
 .icon-user:before { content: "\f007"; }
-.icon-film:before { content: "\f008"; }
-.icon-th-large:before { content: "\f009"; }
-.icon-th:before { content: "\f00a"; }
-.icon-th-list:before { content: "\f00b"; }
-.icon-ok:before { content: "\f00c"; }
-.icon-remove:before { content: "\f00d"; }
-.icon-zoom-in:before { content: "\f00e"; }
-.icon-zoom-out:before { content: "\f010"; }
-.icon-off:before { content: "\f011"; }
-.icon-signal:before { content: "\f012"; }
-.icon-cog:before { content: "\f013"; }
-.icon-trash:before { content: "\f014"; }
 .icon-home:before { content: "\f015"; }
-.icon-file:before { content: "\f016"; }
-.icon-time:before { content: "\f017"; }
-.icon-road:before { content: "\f018"; }
-.icon-download-alt:before { content: "\f019"; }
-.icon-download:before { content: "\f01a"; }
-.icon-upload:before { content: "\f01b"; }
-.icon-inbox:before { content: "\f01c"; }
-.icon-play-circle:before { content: "\f01d"; }
-.icon-repeat:before { content: "\f01e"; }
-.icon-refresh:before { content: "\f021"; }
-.icon-list-alt:before { content: "\f022"; }
-.icon-lock:before { content: "\f023"; }
-.icon-flag:before { content: "\f024"; }
-.icon-headphones:before { content: "\f025"; }
-.icon-volume-off:before { content: "\f026"; }
-.icon-volume-down:before { content: "\f027"; }
-.icon-volume-up:before { content: "\f028"; }
-.icon-qrcode:before { content: "\f029"; }
-.icon-barcode:before { content: "\f02a"; }
-.icon-tag:before { content: "\f02b"; }
-.icon-tags:before { content: "\f02c"; }
 .icon-book:before { content: "\f02d"; }
-.icon-bookmark:before { content: "\f02e"; }
-.icon-print:before { content: "\f02f"; }
-.icon-camera:before { content: "\f030"; }
-.icon-font:before { content: "\f031"; }
-.icon-bold:before { content: "\f032"; }
-.icon-italic:before { content: "\f033"; }
-.icon-text-height:before { content: "\f034"; }
-.icon-text-width:before { content: "\f035"; }
-.icon-align-left:before { content: "\f036"; }
-.icon-align-center:before { content: "\f037"; }
-.icon-align-right:before { content: "\f038"; }
-.icon-align-justify:before { content: "\f039"; }
-.icon-list:before { content: "\f03a"; }
-.icon-indent-left:before { content: "\f03b"; }
-.icon-indent-right:before { content: "\f03c"; }
-.icon-facetime-video:before { content: "\f03d"; }
-.icon-picture:before { content: "\f03e"; }
-.icon-pencil:before { content: "\f040"; }
 .icon-map-marker:before { content: "\f041"; }
-.icon-adjust:before { content: "\f042"; }
-.icon-tint:before { content: "\f043"; }
-.icon-edit:before { content: "\f044"; }
-.icon-share:before { content: "\f045"; }
-.icon-check:before { content: "\f046"; }
-.icon-move:before { content: "\f047"; }
-.icon-step-backward:before { content: "\f048"; }
-.icon-fast-backward:before { content: "\f049"; }
-.icon-backward:before { content: "\f04a"; }
-.icon-play:before { content: "\f04b"; }
-.icon-pause:before { content: "\f04c"; }
-.icon-stop:before { content: "\f04d"; }
-.icon-forward:before { content: "\f04e"; }
-.icon-fast-forward:before { content: "\f050"; }
-.icon-step-forward:before { content: "\f051"; }
-.icon-eject:before { content: "\f052"; }
-.icon-chevron-left:before { content: "\f053"; }
-.icon-chevron-right:before { content: "\f054"; }
-.icon-plus-sign:before { content: "\f055"; }
-.icon-minus-sign:before { content: "\f056"; }
-.icon-remove-sign:before { content: "\f057"; }
-.icon-ok-sign:before { content: "\f058"; }
-.icon-question-sign:before { content: "\f059"; }
-.icon-info-sign:before { content: "\f05a"; }
-.icon-screenshot:before { content: "\f05b"; }
-.icon-remove-circle:before { content: "\f05c"; }
-.icon-ok-circle:before { content: "\f05d"; }
-.icon-ban-circle:before { content: "\f05e"; }
-.icon-arrow-left:before { content: "\f060"; }
-.icon-arrow-right:before { content: "\f061"; }
-.icon-arrow-up:before { content: "\f062"; }
-.icon-arrow-down:before { content: "\f063"; }
-.icon-share-alt:before { content: "\f064"; }
-.icon-resize-full:before { content: "\f065"; }
-.icon-resize-small:before { content: "\f066"; }
-.icon-plus:before { content: "\f067"; }
-.icon-minus:before { content: "\f068"; }
-.icon-asterisk:before { content: "\f069"; }
-.icon-exclamation-sign:before { content: "\f06a"; }
-.icon-gift:before { content: "\f06b"; }
-.icon-leaf:before { content: "\f06c"; }
-.icon-fire:before { content: "\f06d"; }
-.icon-eye-open:before { content: "\f06e"; }
-.icon-eye-close:before { content: "\f070"; }
-.icon-warning-sign:before { content: "\f071"; }
-.icon-plane:before { content: "\f072"; }
-.icon-calendar:before { content: "\f073"; }
-.icon-random:before { content: "\f074"; }
-.icon-comment:before { content: "\f075"; }
-.icon-magnet:before { content: "\f076"; }
 .icon-chevron-up:before { content: "\f077"; }
 .icon-chevron-down:before { content: "\f078"; }
-.icon-retweet:before { content: "\f079"; }
-.icon-shopping-cart:before { content: "\f07a"; }
-.icon-folder-close:before { content: "\f07b"; }
-.icon-folder-open:before { content: "\f07c"; }
-.icon-resize-vertical:before { content: "\f07d"; }
-.icon-resize-horizontal:before { content: "\f07e"; }
-.icon-bar-chart:before { content: "\f080"; }
-.icon-twitter-sign:before { content: "\f081"; }
-.icon-facebook-sign:before { content: "\f082"; }
-.icon-camera-retro:before { content: "\f083"; }
-.icon-key:before { content: "\f084"; }
-.icon-cogs:before { content: "\f085"; }
-.icon-comments:before { content: "\f086"; }
-.icon-thumbs-up:before { content: "\f087"; }
-.icon-thumbs-down:before { content: "\f088"; }
-.icon-star-half:before { content: "\f089"; }
-.icon-heart-empty:before { content: "\f08a"; }
-.icon-signout:before { content: "\f08b"; }
-.icon-linkedin-sign:before { content: "\f08c"; }
-.icon-pushpin:before { content: "\f08d"; }
 .icon-external-link:before { content: "\f08e"; }
-.icon-signin:before { content: "\f090"; }
-.icon-trophy:before { content: "\f091"; }
 .icon-github-sign:before { content: "\f092"; }
-.icon-upload-alt:before { content: "\f093"; }
-.icon-lemon:before { content: "\f094"; }

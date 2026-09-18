@@ -17,6 +17,8 @@ layout: default
         <span class="filter-count"></span>
     </div>
 
+    <p id="pub-empty" class="pub-empty" hidden></p>
+
     <ul id="filterlist">
         {% for paper in site.data.publications %}
         <li {% if paper.hot %}class="hot" {% endif %}>
@@ -48,7 +50,10 @@ layout: default
                 </div>
             </div>
             {% if paper.abstract %}
-            <div class="pubabstract"><strong>Abstract</strong>: {{ paper.abstract }}</div>
+            <details class="pub-abstract">
+                <summary>Abstract</summary>
+                <div class="pubabstract">{{ paper.abstract }}</div>
+            </details>
             {% endif %}
         </li>
         {% endfor %}
