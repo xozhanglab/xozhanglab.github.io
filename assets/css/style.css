@@ -603,17 +603,8 @@ ul#menu li.current a {
     font-size: 1.02rem;
     line-height: 1.85;
     color: var(--ink-soft);
+    max-width: none;
     padding-bottom: 28px;
-    /* keeps the full-width span the page asks for, but reads as two
-       ~70-character columns instead of one 138-character line */
-    columns: 2;
-    column-gap: 52px;
-}
-
-@media (max-width: 860px) {
-    .lead {
-        columns: 1;
-    }
 }
 
 .page-intro {
@@ -1264,62 +1255,9 @@ a.searchbox {
     opacity: 1;
 }
 
-.pub-abstract {
-    margin-top: 12px;
-}
-
-.pub-abstract summary {
-    /* `display: list-item` is load-bearing: overriding it (e.g. with flex)
-       strips the native disclosure behaviour, and the keyboard stops
-       toggling the panel. The marker is hidden via ::marker instead. */
-    display: list-item;
-    list-style: none;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--brand-deep);
-    cursor: pointer;
-    user-select: none;
-    width: fit-content;
-}
-
-.pub-abstract summary::-webkit-details-marker {
-    display: none;
-}
-
-.pub-abstract summary::marker {
-    content: "";
-}
-
-.pub-abstract summary::before {
-    content: "";
-    display: inline-block;
-    width: 0;
-    height: 0;
-    margin-right: 8px;
-    vertical-align: 1px;
-    border-left: 5px solid currentColor;
-    border-top: 4px solid transparent;
-    border-bottom: 4px solid transparent;
-    transition: transform 0.2s ease;
-}
-
-.pub-abstract[open] summary::before {
-    transform: rotate(90deg);
-}
-
-.pub-abstract summary:hover {
-    color: var(--brand);
-}
-
-.pub-abstract summary:focus-visible {
-    outline: 2px solid var(--brand);
-    outline-offset: 3px;
-    border-radius: 4px;
-}
-
-/* the <details> element owns visibility now, so no display: none here */
 .pubabstract {
-    margin-top: 12px;
+    display: none;
+    margin-top: 14px;
     padding: 12px 18px;
     background: color-mix(in srgb, var(--brand) 6%, transparent);
     border-left: 3px solid color-mix(in srgb, var(--brand) 50%, transparent);

@@ -50,10 +50,7 @@ layout: default
                 </div>
             </div>
             {% if paper.abstract %}
-            <details class="pub-abstract">
-                <summary>Abstract</summary>
-                <div class="pubabstract">{{ paper.abstract }}</div>
-            </details>
+            <div class="pubabstract"><strong>Abstract</strong>: {{ paper.abstract }}</div>
             {% endif %}
         </li>
         {% endfor %}

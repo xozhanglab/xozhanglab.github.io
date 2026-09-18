@@ -235,10 +235,8 @@
             li.style.display = show ? '' : 'none';
             if (show) hits++;
 
-            // <details> owns the disclosure; reveal matches, never force-close
-            // a panel the reader opened themselves
-            var d = li.querySelector('.pub-abstract');
-            if (d && term && matched && show) d.open = true;
+            var abs = li.querySelector('.pubabstract');
+            if (abs) abs.style.display = (term && matched && show) ? 'block' : 'none';
         });
 
         var emptyEl = document.getElementById('pub-empty');
@@ -315,6 +313,15 @@
         });
 
 
+        // clicking a paper toggles its abstract
+        Array.prototype.forEach.call(filterList.children, function (li) {
+            li.addEventListener('click', function (e) {
+                if (e.target.closest('a')) return;   // let links work normally
+                var abs = li.querySelector('.pubabstract');
+                if (!abs || !abs.textContent.trim()) return;
+                abs.style.display = (getComputedStyle(abs).display === 'none') ? 'block' : 'none';
+            });
+        });
     }
 
     /* ---- Publications: year filter chips ---- */
