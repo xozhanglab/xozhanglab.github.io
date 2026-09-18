@@ -18,7 +18,7 @@
     TE-TSS is a database of transposon (TE)-derived transcription start sites (TSSs). It collects
     TE-derived TSSs in human and mouse, and lets users search, browse and download them together
     with their usage across biosamples. <a href="https://pubmed.ncbi.nlm.nih.gov/37956335">(Gu et
-    al., Nucleic Acids Research, 2023)</a>
+    al., Nucleic Acids Research, 2024)</a>
 
 - name: RAMPAGE analysis toolkit
   type: Software
