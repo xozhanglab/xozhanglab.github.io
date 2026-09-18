@@ -203,7 +203,12 @@
         if (!filterList) return;
         var items = filterList.children;
         var term = pubState.term;
-        var plain = term ? new RegExp('\\b(' + term.replace(/\s+/g, '|') + ')', 'gi') : null;
+        // escape the user's text: an unescaped "(" or "[" throws a
+        // SyntaxError inside the debounced handler, which silently kills
+        // the search with no message
+        var plain = term ? new RegExp('\\b(' + term.split(/\s+/).map(function (w) {
+            return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+        }).join('|') + ')', 'gi') : null;
         var highlight = term.length > 2;
         var hits = 0;
 
