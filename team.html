@@ -1,20 +1,22 @@
 ---
 layout: default
+title: Team
 ---
 
 <div id="content" class="page-content">
+    <h1 class="sr-only">Team</h1>
     <h2 class="section-header" data-reveal>Principal Investigator</h2>
     <article class="pi-card" data-reveal>
         <div class="pi-photo">
-            <img src="images/team/xiaoou.jpg" alt="Xiao-Ou Zhang" />
+            <img src="images/team/xiaoou.jpg" alt="Xiao-Ou Zhang" width="363" height="400" />
         </div>
         <div class="pi-info">
             <h3>Xiao-Ou Zhang <span class="role-badge">PI</span></h3>
             <p class="member-links">
-                <a href="mailto:zhangxiaoou@tongji.edu.cn"><i class="icon-envelope"></i> zhangxiaoou@tongji.edu.cn</a>
-                <a target="_blank" rel="noopener" href="https://kepbod.com"><i class="icon-home"></i> kepbod.com</a>
-                <a target="_blank" rel="noopener" href="https://github.com/kepbod"><i class="icon-github-sign"></i> @kepbod</a>
-                <span><i class="icon-map-marker"></i> 1239 Siping Road, Shanghai 200092</span>
+                <a href="mailto:zhangxiaoou@tongji.edu.cn"><i class="icon-envelope" aria-hidden="true"></i> zhangxiaoou@tongji.edu.cn</a>
+                <a target="_blank" rel="noopener" href="https://kepbod.com"><i class="icon-home" aria-hidden="true"></i> kepbod.com</a>
+                <a target="_blank" rel="noopener" href="https://github.com/kepbod"><i class="icon-github-sign" aria-hidden="true"></i> @kepbod</a>
+                <span><i class="icon-map-marker" aria-hidden="true"></i> 1239 Siping Road, Shanghai 200092</span>
             </p>
             <p class="member-bio">
                 Xiao-Ou earned a B.E. in Biological Engineering from Huazhong Agricultural University and a B.S.
@@ -38,19 +40,25 @@ layout: default
         {% for member in site.data.team %}
         <article class="member-card" data-reveal data-tilt>
             <div class="avatar">
-                <img src="{{ member.pic }}" alt="{{ member.name }}" />
+                <img src="{{ member.pic }}" alt="{{ member.name }}" loading="lazy" decoding="async" />
             </div>
             <h3>{{ member.name }}</h3>
             {% if member.role %}<span class="role-badge">{{ member.role }}</span>{% endif %}
-            <a class="member-email" href="mailto:{{ member.email }}"><i class="icon-envelope"></i> {{ member.email }}</a>
+            <a class="member-email" href="mailto:{{ member.email }}"><i class="icon-envelope" aria-hidden="true"></i> {{ member.email }}</a>
             <div class="member-bio">{{ member.bio | markdownify }}</div>
         </article>
         {% endfor %}
     </div>
 
-    <h2 class="section-header alumni-header" onclick="toggleAlumni()" data-reveal>Alumni <span
-            id="alumni-toggle-symbol"><i class="icon-chevron-down"></i></span></h2>
-    <table id="alumni-table" style="display: none;">
+    <h2 class="section-header alumni-header" data-reveal>
+        <button id="alumni-toggle" class="alumni-toggle" type="button" aria-expanded="false"
+            aria-controls="alumni-table">
+            Alumni <span class="alumni-symbol" aria-hidden="true"><i class="icon-chevron-down"></i></span>
+        </button>
+    </h2>
+    <!-- Not hidden in the markup: without JS the collapse never runs, so the
+         content has to stay reachable. style.css hides it only under ".js". -->
+    <table id="alumni-table">
         <tbody>
             {% for alumni in site.data.alumni %}
             <tr>
@@ -61,17 +69,3 @@ layout: default
         </tbody>
     </table>
 </div>
-
-<script>
-function toggleAlumni() {
-    var table = document.getElementById("alumni-table");
-    var symbol = document.getElementById("alumni-toggle-symbol").firstElementChild;
-    if (table.style.display === "none") {
-        table.style.display = "table";
-        symbol.className = "icon-chevron-up";
-    } else {
-        table.style.display = "none";
-        symbol.className = "icon-chevron-down";
-    }
-}
-</script>

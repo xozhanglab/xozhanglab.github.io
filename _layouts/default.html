@@ -10,12 +10,14 @@
         {{ content }}
     </main>
     {% include footer.html %}
-    <button id="to-top" type="button" aria-label="Back to top"><i class="icon-chevron-up"></i></button>
+    <button id="to-top" type="button" aria-label="Back to top"><i class="icon-chevron-up" aria-hidden="true"></i></button>
     <!-- Scripts are placed at the end of <body> so they do not block
-         the browser from rendering the page content above. -->
-    <script src="assets/js/particles.js"></script>
-    <script src="assets/js/app.js"></script>
-    <script src="assets/js/site.js"></script>
+         the browser from rendering the page content above. The URLs are
+         root-absolute because this layout also renders the 404 page, which
+         GitHub Pages serves for nested paths like /team/nobody. -->
+    <script src="{{ '/assets/js/particles.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/app.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 
 </html>

@@ -1,8 +1,10 @@
 ---
 layout: default
+title: "Softwares & Databases"
 ---
 
 <div id="content" class="page-content">
+    <h1 class="sr-only">Softwares &amp; Databases</h1>
     <h2 class="section-header" data-reveal>Softwares &amp; Databases</h2>
     <p class="page-intro" data-reveal>Please see the Xiao-Ou Zhang Lab's <a href="https://github.com/xozhanglab"
             target="_blank" rel="noopener">GitHub page</a> for our latest software packages.</p>
@@ -12,7 +14,7 @@ layout: default
         {% for item in items %}
         <article class="software-card" data-reveal data-tilt>
             <div class="software-figure">
-                <img src="{{ item.img }}" alt="{{ item.name }}" />
+                <img src="{{ item.img }}" alt="{{ item.name }}" loading="lazy" decoding="async" />
             </div>
             <h3>{{ item.name }}
                 <a class="software-link" href="{{ item.website }}" target="_blank" rel="noopener"
@@ -31,7 +33,7 @@ layout: default
         {% for item in items %}
         <article class="software-card" data-reveal data-tilt>
             <div class="software-figure">
-                <img src="{{ item.img }}" alt="{{ item.name }}" />
+                <img src="{{ item.img }}" alt="{{ item.name }}" loading="lazy" decoding="async" />
             </div>
             <h3>{{ item.name }}
                 <a class="software-link" href="{{ item.website }}" target="_blank" rel="noopener"

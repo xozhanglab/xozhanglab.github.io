@@ -18,8 +18,8 @@ layout: default
             sequences &mdash; transposable elements, RNA processing kinetics and noncoding RNAs &mdash; and to
             understand their roles in gene regulation and disease.</p>
         <div class="hero-actions" data-reveal>
-            <a class="btn btn-outline" href="/team"><i class="icon-user"></i> Meet the Team</a>
-            <a class="btn btn-outline" href="/publications"><i class="icon-book"></i> Browse Publications</a>
+            <a class="btn btn-outline" href="/team"><i class="icon-user" aria-hidden="true"></i> Meet the Team</a>
+            <a class="btn btn-outline" href="/publications"><i class="icon-book" aria-hidden="true"></i> Browse Publications</a>
             <a class="btn btn-join" href="#positions">Join the Lab <span class="arrow">&darr;</span></a>
         </div>
     </div>
@@ -43,7 +43,7 @@ layout: default
         {% for study in site.data.research %}
         <article class="research-card" data-reveal data-tilt>
             <div class="research-figure">
-                <img src="{{ study.img }}" alt="{{ study.title }}" />
+                <img src="{{ study.img }}" alt="{{ study.title }}" loading="lazy" decoding="async" />
             </div>
             <div class="research-body">
                 <h3>{{ study.title }}</h3>

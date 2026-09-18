@@ -4,22 +4,46 @@
 (function () {
     'use strict';
 
+    /* head.html hides [data-reveal] content as soon as the "js" class is set,
+       so it has to be told the opposite: an inline fail-safe there reveals
+       everything if this file never runs. That marker is added first, before
+       anything below can throw. */
+    document.documentElement.classList.add('js-ready');
+
     var reduceMotion = window.matchMedia &&
         window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
     /* ---- Mobile navigation ---- */
     var navToggle = document.getElementById('nav-toggle');
     var menu = document.getElementById('menu');
+
+    function closeNav() {
+        if (!document.body.classList.contains('nav-open')) return;
+        document.body.classList.remove('nav-open');
+        navToggle.setAttribute('aria-expanded', 'false');
+    }
+
     if (navToggle && menu) {
         navToggle.addEventListener('click', function () {
             var open = document.body.classList.toggle('nav-open');
             navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
         });
         menu.addEventListener('click', function (e) {
-            if (e.target && e.target.tagName === 'A') {
-                document.body.classList.remove('nav-open');
-                navToggle.setAttribute('aria-expanded', 'false');
-            }
+            if (e.target && e.target.tagName === 'A') closeNav();
+        });
+        // Escape and an outside click both close the menu: on a phone the
+        // only other way out is hitting the toggle again or a nav link.
+        document.addEventListener('keydown', function (e) {
+            if (e.key !== 'Escape' && e.key !== 'Esc') return;
+            if (!document.body.classList.contains('nav-open')) return;
+            closeNav();
+            navToggle.focus();
+        });
+        document.addEventListener('click', function (e) {
+            if (!document.body.classList.contains('nav-open')) return;
+            var t = e.target;
+            if (t && t.closest && t.closest('#navbar')) return;
+            closeNav();
         });
     }
 
@@ -199,6 +223,59 @@
     var PUB_FIELDS = '.pubtitle, .pubauthors, .journal-badge, .pub-year, ' +
         '.pub-cite, .pub-doi, .pubabstract';
 
+    /* Search used to run against each field's serialized HTML, so a term like
+       "sup", "doi" or "hot" matched a tag name or a class attribute and got
+       wrapped as a highlight, producing invalid markup. Matching walks text
+       nodes only, which also makes "did this field match?" agree with what a
+       reader actually sees. */
+    function eachTextNode(root, fn) {
+        var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+        var node;
+        while ((node = walker.nextNode())) {
+            if (fn(node) === false) return;
+        }
+    }
+
+    function textMatches(el, regex) {
+        var found = false;
+        eachTextNode(el, function (node) {
+            regex.lastIndex = 0;
+            if (regex.test(node.nodeValue)) { found = true; return false; }
+        });
+        return found;
+    }
+
+    function highlightText(el, regex) {
+        var nodes = [];
+        eachTextNode(el, function (node) {
+            regex.lastIndex = 0;
+            if (regex.test(node.nodeValue)) nodes.push(node);
+        });
+        if (!nodes.length) return false;
+        nodes.forEach(function (node) {
+            var text = node.nodeValue;
+            var frag = document.createDocumentFragment();
+            var last = 0, m;
+            regex.lastIndex = 0;
+            while ((m = regex.exec(text)) !== null) {
+                if (!m[0].length) { regex.lastIndex++; continue; }
+                if (m.index > last) {
+                    frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+                }
+                var mark = document.createElement('span');
+                mark.className = 'highlight';
+                mark.textContent = m[0];
+                frag.appendChild(mark);
+                last = m.index + m[0].length;
+            }
+            if (last < text.length) {
+                frag.appendChild(document.createTextNode(text.slice(last)));
+            }
+            node.parentNode.replaceChild(frag, node);
+        });
+        return true;
+    }
+
     function pubRefresh() {
         if (!filterList) return;
         var items = filterList.children;
@@ -209,25 +286,25 @@
         var plain = term ? new RegExp('\\b(' + term.split(/\s+/).map(function (w) {
             return w.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         }).join('|') + ')', 'gi') : null;
-        var highlight = term.length > 2;
         var hits = 0;
 
         Array.prototype.forEach.call(items, function (li) {
             var matched = false;
+            var absHit = false;
+            var abs = li.querySelector('.pubabstract');
+
             Array.prototype.forEach.call(li.querySelectorAll(PUB_FIELDS),
                 function (el) {
-                    var orig = el.dataset.originalHtml;
-                    if (orig === undefined) return;
-                    if (!plain) {
-                        el.innerHTML = orig;
-                    } else {
-                        var fieldHit = false;
-                        el.innerHTML = orig.replace(plain, function (m) {
-                            fieldHit = true;
-                            return highlight ? '<span class="highlight">' + m + '</span>' : m;
-                        });
-                        if (fieldHit) matched = true;
+                    // restore the saved markup first: the previous pass may
+                    // have wrapped matches in <span class="highlight">
+                    if (el.dataset.originalHtml !== undefined) {
+                        el.innerHTML = el.dataset.originalHtml;
                     }
+                    if (!plain) return;
+                    if (!textMatches(el, plain)) return;
+                    matched = true;
+                    if (el === abs) absHit = true;
+                    highlightText(el, plain);
                 });
 
             var yearOk = !pubState.year || li.getAttribute('data-year') === pubState.year;
@@ -235,18 +312,32 @@
             li.style.display = show ? '' : 'none';
             if (show) hits++;
 
-            var abs = li.querySelector('.pubabstract');
-            if (abs) abs.style.display = (term && matched && show) ? 'block' : 'none';
+            if (abs) {
+                // An abstract opens when the term matched inside it, that is
+                // the only place the hit could be seen, or when the reader
+                // opened it by hand. Expanding every card whose *title*
+                // matched buried the matched titles under 30 panels.
+                var manual = li.getAttribute('data-abs-open') === '1';
+                abs.style.display = (show && (absHit || manual)) ? 'block' : 'none';
+            }
         });
 
         var emptyEl = document.getElementById('pub-empty');
         if (emptyEl) {
-            emptyEl.hidden = hits !== 0 || (!term && !pubState.year);
-            if (!emptyEl.hidden) {
+            var showEmpty = hits === 0 && (term || pubState.year);
+            emptyEl.hidden = !showEmpty;
+            if (showEmpty) {
                 emptyEl.textContent = 'No papers match' +
                     (term ? ' "' + term + '"' : '') +
-                    (pubState.year ? ' in ' + pubState.year : '') +
-                    '. Try a shorter keyword, or clear the year filter.';
+                    (pubState.year ? ' in ' + pubState.year : '') + '. ';
+                // The old copy told the reader to clear the filters without
+                // giving them anything to click.
+                var reset = document.createElement('button');
+                reset.type = 'button';
+                reset.className = 'pub-empty-reset';
+                reset.textContent = 'Clear all filters';
+                reset.addEventListener('click', resetFilters);
+                emptyEl.appendChild(reset);
             }
         }
 
@@ -263,6 +354,28 @@
         return hits;
     }
 
+    function resetFilters() {
+        pubState.year = null;
+        pubState.term = '';
+        if (filterInputEl) {
+            filterInputEl.value = '';
+            filterInputEl.focus();
+        }
+        if (clearBtnEl) clearBtnEl.hidden = true;
+        Array.prototype.forEach.call(
+            document.querySelectorAll('#year-chips .chip'),
+            function (c) {
+                var on = c.getAttribute('data-year') === '';
+                c.classList.toggle('active', on);
+                c.setAttribute('aria-pressed', on ? 'true' : 'false');
+            }
+        );
+        pubRefresh();
+    }
+
+    var filterInputEl = null;
+    var clearBtnEl = null;
+
     if (filterForm && filterList && filterList.querySelector('.pubtitle')) {
         var hint = window.innerWidth < 560
             ? 'Filter by keyword ...'
@@ -270,23 +383,31 @@
 
         var form = document.createElement('form');
         form.className = 'searchbox';
-        form.setAttribute('action', '#');
+        form.setAttribute('role', 'search');
 
-        var clearBtn = document.createElement('a');
+        // A form with one text input submits on Enter; with no action that
+        // reloads the page (or jumps to "#") and silently drops the filters.
+        form.addEventListener('submit', function (e) { e.preventDefault(); });
+
+        var clearBtn = document.createElement('button');
+        clearBtn.type = 'button';
         clearBtn.className = 'searchbox';
-        clearBtn.setAttribute('href', '');
         clearBtn.setAttribute('aria-label', 'Clear search');
-        clearBtn.style.visibility = 'hidden';
+        clearBtn.hidden = true;
 
         var input = document.createElement('input');
         input.className = 'searchbox';
-        input.type = 'text';
+        input.type = 'search';
         input.setAttribute('placeholder', hint);
         input.setAttribute('aria-label', 'Filter publications');
+        input.setAttribute('autocomplete', 'off');
 
         form.appendChild(clearBtn);
         form.appendChild(input);
         filterForm.appendChild(form);
+
+        filterInputEl = input;
+        clearBtnEl = clearBtn;
 
         // remember each field's original HTML so highlighting is reversible
         Array.prototype.forEach.call(filterList.children, function (li) {
@@ -299,19 +420,17 @@
             clearTimeout(timer);
             timer = setTimeout(function () {
                 pubState.term = input.value.replace(/^\s+|\s+$/g, '');
-                clearBtn.style.visibility = pubState.term ? 'visible' : 'hidden';
+                clearBtn.hidden = !pubState.term;
                 pubRefresh();
             }, 220);
         });
-        clearBtn.addEventListener('click', function (e) {
-            e.preventDefault();
+        clearBtn.addEventListener('click', function () {
             input.value = '';
             input.focus();
             pubState.term = '';
-            clearBtn.style.visibility = 'hidden';
+            clearBtn.hidden = true;
             pubRefresh();
         });
-
 
         // clicking a paper toggles its abstract
         Array.prototype.forEach.call(filterList.children, function (li) {
@@ -319,7 +438,9 @@
                 if (e.target.closest('a')) return;   // let links work normally
                 var abs = li.querySelector('.pubabstract');
                 if (!abs || !abs.textContent.trim()) return;
-                abs.style.display = (getComputedStyle(abs).display === 'none') ? 'block' : 'none';
+                li.setAttribute('data-abs-open',
+                    li.getAttribute('data-abs-open') === '1' ? '0' : '1');
+                pubRefresh();
             });
         });
     }
@@ -344,17 +465,32 @@
                 pubRefresh();
             }
 
+            // ".active" carries the styling and aria-pressed carries the
+            // state; flipping them together keeps the two from drifting, and
+            // gives screen readers the selected year the colour conveys.
+            function setActiveChip(chip) {
+                Array.prototype.forEach.call(chipsWrap.children, function (c) {
+                    var on = c === chip;
+                    c.classList.toggle('active', on);
+                    c.setAttribute('aria-pressed', on ? 'true' : 'false');
+                });
+            }
+
+            var yearTotal = Object.keys(years).reduce(function (n, y) {
+                return n + years[y];
+            }, 0);
+
             function makeChip(label, year) {
                 var b = document.createElement('button');
                 b.type = 'button';
                 b.className = 'chip';
-                b.textContent = year ? label + ' \u00b7 ' + years[year] : label;
+                b.setAttribute('data-year', year || '');
+                // "All years" was the only chip without a count
+                b.textContent = label + ' \u00b7 ' + (year ? years[year] : yearTotal);
+                b.setAttribute('aria-pressed', year ? 'false' : 'true');
                 if (!year) b.classList.add('active');
                 b.addEventListener('click', function () {
-                    Array.prototype.forEach.call(chipsWrap.children, function (c) {
-                        c.classList.remove('active');
-                    });
-                    b.classList.add('active');
+                    setActiveChip(b);
                     applyFilter(year);
                 });
                 chipsWrap.appendChild(b);
@@ -365,5 +501,18 @@
                 makeChip(y, y);
             });
         }
+    }
+
+    /* ---- Alumni disclosure ----
+       The heading used to be an <h2 onclick> with no role, no tabindex and
+       the table hidden by an inline style, so it was unreachable by keyboard
+       and its content vanished entirely without JS. */
+    var alumniBtn = document.getElementById('alumni-toggle');
+    var alumniTable = document.getElementById('alumni-table');
+    if (alumniBtn && alumniTable) {
+        alumniBtn.addEventListener('click', function () {
+            var open = alumniTable.classList.toggle('is-open');
+            alumniBtn.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
     }
 })();

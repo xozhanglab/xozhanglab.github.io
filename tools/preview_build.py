@@ -77,6 +77,16 @@ def main():
         parts = [p.strip() for p in re.split(r"\n\s*\n", (text or "").strip()) if p.strip()]
         return "\n".join("<p>" + p + "</p>" for p in parts)
 
+    def relative_url(path):
+        """Jekyll's relative_url: prefix with baseurl, always root-absolute.
+
+        The site has no baseurl, so this reduces to ensuring the leading slash
+        — which is the whole point of using the filter (a nested 404 must not
+        resolve "assets/..." against its own directory).
+        """
+        path = str(path or "")
+        return "/" + path.lstrip("/")
+
     env.filters.update(
         {
             "plus": lambda v, n: v + n,
@@ -87,6 +97,8 @@ def main():
             "split": lambda v, s: v.split(s),
             "markdownify": markdownify,
             "where": where_filter,
+            "relative_url": relative_url,
+            "absolute_url": lambda v: "https://xozhanglab.com" + relative_url(v),
             # Liquid spellings that differ from Jinja's
             "downcase": lambda v: str(v).lower(),
             "upcase": lambda v: str(v).upper(),
