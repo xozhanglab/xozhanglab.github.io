@@ -211,6 +211,14 @@
         }
     );
 
+    /* Non-empty selection means the reader is selecting text, not clicking
+       the card; a plain click has already cleared it by the time it fires. */
+    function hasTextSelection() {
+        var sel = window.getSelection ? window.getSelection() : null;
+        if (!sel || typeof sel.toString !== 'function') return false;
+        return /\S/.test(sel.toString());
+    }
+
     /* ---- Publication search + year filter ----
        Both conditions feed one refresh() so they never fight over
        li.style.display (which they did when handled separately). ---- */
@@ -435,7 +443,16 @@
         // clicking a paper toggles its abstract
         Array.prototype.forEach.call(filterList.children, function (li) {
             li.addEventListener('click', function (e) {
-                if (e.target.closest('a')) return;   // let links work normally
+                var t = e.target;
+                // links and buttons act on their own; the abstract is a text
+                // panel the reader may want to select or copy from
+                if (t && t.closest && t.closest('a, button, input, select, textarea')) return;
+                if (t && t.closest && t.closest('.pubabstract')) return;
+                // A drag-select ends with a click on the same card, which used
+                // to collapse the panel and throw the selection away, so the
+                // clipboard stayed empty. A plain click clears any selection
+                // before it fires, so a live selection means "was selecting".
+                if (hasTextSelection()) return;
                 var abs = li.querySelector('.pubabstract');
                 if (!abs || !abs.textContent.trim()) return;
                 li.setAttribute('data-abs-open',
