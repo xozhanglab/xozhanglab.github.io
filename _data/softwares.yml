@@ -24,21 +24,11 @@
   type: Software
   group: current
   img: /images/softwares/RAMPAGE.jpg
-  website: https://github.com/kepbod/rampage_alu
+  website: https://github.com/kepbod/rampage_te_tss
   description: |
     The RAMPAGE analysis toolkit is a standardized pipeline for quality control, data cleaning, peak
     calling and peak annotation of RAMPAGE data. We used it to identify Pol III-transcribed Alu
     elements <a href="http://www.ncbi.nlm.nih.gov/pubmed/31413151">(Zhang et al., Genome Research, 2019)</a>, alternative TSSs <a href="http://www.ncbi.nlm.nih.gov/pubmed/34949670">(Moore et al., Genome Research, 2022)</a>, expressed snRNA variants <a href="http://www.ncbi.nlm.nih.gov/pubmed/42697701">(Zhang et al., Genome Research, 2026)</a> and transposon-derived TSSs <a href="http://www.ncbi.nlm.nih.gov/pubmed/41620470">(Zhang et al., Nature Communications, 2026)</a>.
-
-- name: CIRCpseudo
-  type: Software
-  group: earlier
-  img: /images/softwares/CIRCpseudo.jpg
-  website: https://github.com/YangLab/CIRCpseudo
-  description: |
-    CIRCpseudo maps back-splicing junction sequences to identify pseudogenes derived from circular
-    RNAs, revealing how circRNAs can be written back into the genome. <a
-    href="http://www.ncbi.nlm.nih.gov/pubmed/27021280">(Dong et al., Cell Research, 2016)</a>
 
 - name: CIRCexplorer/CIRCexplorer2
   type: Software
@@ -51,6 +41,16 @@
     characterization of alternative (back-)splicing events. <a
     href="http://www.ncbi.nlm.nih.gov/pubmed/25242744">(Zhang et al., Cell, 2014)</a> <a
     href="http://www.ncbi.nlm.nih.gov/pubmed/27365365">(Zhang et al., Genome Research, 2016)</a>
+
+- name: CIRCpseudo
+  type: Software
+  group: earlier
+  img: /images/softwares/CIRCpseudo.jpg
+  website: https://github.com/YangLab/CIRCpseudo
+  description: |
+    CIRCpseudo maps back-splicing junction sequences to identify pseudogenes derived from circular
+    RNAs, revealing how circRNAs can be written back into the genome. <a
+    href="http://www.ncbi.nlm.nih.gov/pubmed/27021280">(Dong et al., Cell Research, 2016)</a>
 
 - name: CIRCfinder
   type: Software
